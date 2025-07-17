@@ -4,39 +4,34 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Sites modernos e responsivos para impulsionar sua presença digital." />
-  <title>Toth web</title>
-  <!--FONTE NOME DA EMPRESA-->
-  <style>
-@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+  <title>Thot Web | Criação de Sites Modernos e Responsivos</title>
 
-</style>
+  <!-- FONTE EMPRESA -->
+  <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
   <!-- SEO Básico -->
-<title>Impacto Web | Criação de Sites Modernos e Responsivos</title>
-<meta name="description" content="A Impacto Web cria sites profissionais, modernos e responsivos para destacar sua empresa na internet. Fale conosco pelo WhatsApp!">
-<meta name="keywords" content="criação de sites, site responsivo, web design, desenvolvimento web, impacto web, presença digital">
-<meta name="author" content="Impacto Web">
-<meta name="robots" content="index, follow">
+  <meta name="keywords" content="criação de sites, site responsivo, web design, desenvolvimento web, impacto web, presença digital">
+  <meta name="author" content="Impacto Web">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="Content-Language" content="pt-br">
 
-<!-- Acessibilidade e idioma -->
-<meta http-equiv="Content-Language" content="pt-br">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Impacto Web | Sites Profissionais e Responsivos">
+  <meta property="og:description" content="Impulsione sua presença digital com um site moderno e otimizado.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://impactoweb.com.br">
+  <meta property="og:image" content="https://impactoweb.com.br/imagem-destaque.jpg">
 
-<!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
-<meta property="og:title" content="Impacto Web | Sites Profissionais e Responsivos">
-<meta property="og:description" content="Impulsione sua presença digital com um site moderno e otimizado.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://impactoweb.com.br">
-<meta property="og:image" content="https://impactoweb.com.br/imagem-destaque.jpg"> <!-- Substitua pela imagem real -->
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Impacto Web | Sites Profissionais e Responsivos">
+  <meta name="twitter:description" content="Criação de sites modernos, rápidos e otimizados para sua empresa.">
+  <meta name="twitter:image" content="https://impactoweb.com.br/imagem-destaque.jpg">
 
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Impacto Web | Sites Profissionais e Responsivos">
-<meta name="twitter:description" content="Criação de sites modernos, rápidos e otimizados para sua empresa.">
-<meta name="twitter:image" content="https://impactoweb.com.br/imagem-destaque.jpg">
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
-<!-- Favicon -->
-<link rel="icon" href="/favicon.ico" type="image/x-icon">
-
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
 </head>
@@ -46,8 +41,10 @@
 
   <header>
     <div class="container">
-      <h1><strong style="font-weight:900;">Toth</strong> web</h1>
-      <nav role="navigation">
+      <picture>
+        <img src="imagens/Logo_site.png" alt="Logo Toth Web" class="logo" />
+      </picture>
+      <nav role="navigation" aria-label="Menu principal">
         <ul id="menu">
           <li><a href="#home">Início</a></li>
           <li><a href="#sobre">Sobre</a></li>
@@ -63,8 +60,8 @@
       <h2>Bem-vindo</h2>
       <p>Seu espaço profissional na internet começa aqui.</p>
       <a href="https://wa.me/5599999999999?text=Olá!%20Gostaria%20de%20falar%20com%20a%20Impacto%20Web." class="btn-rgb" target="_blank" rel="noopener noreferrer">
-  Fale Conosco
-</a>
+        Fale Conosco
+      </a>
     </div>
     <div class="background-grid"></div>
   </section>
@@ -81,17 +78,17 @@
       <h2>Nossos Serviços</h2>
       <div class="cards">
         <div class="card">
-          <img src="imagens/web-design.jpg" alt="Imagem de Web Design" class="servico-img">
+          <img src="imagens/web-design.jpg" loading="lazy" alt="Imagem de Web Design" class="servico-img">
           <h3>Web Design</h3>
           <p>Layouts modernos, responsivos e com ótima experiência do usuário.</p>
         </div>
         <div class="card">
-          <img src="imagens/desenvolvimento.jpg" alt="Imagem de Desenvolvimento" class="servico-img">
+          <img src="imagens/desenvolvimento.jpg" loading="lazy" alt="Imagem de Desenvolvimento" class="servico-img">
           <h3>Desenvolvimento</h3>
           <p>Soluções em HTML, CSS, JavaScript, PHP e mais!</p>
         </div>
         <div class="card">
-          <img src="imagens/consultoria.jpg" alt="Imagem de Consultoria" class="servico-img">
+          <img src="imagens/consultoria.jpg" loading="lazy" alt="Imagem de Consultoria" class="servico-img">
           <h3>Consultoria</h3>
           <p>Tiramos suas ideias do papel com planejamento digital eficaz.</p>
         </div>
@@ -130,7 +127,7 @@
 
   <footer>
     <div class="container">
-      <p>&copy; 2025 - Toth web. Todos os direitos reservados.</p>
+      <p>&copy; 2025 - Toth Web. Todos os direitos reservados.</p>
     </div>
   </footer>
 
@@ -140,17 +137,27 @@
     </a>
     <span class="whatsapp-msg">Fale agora</span>
   </div>
-   <script>
+
+  <script>
     function toggleMenu() {
       const menu = document.getElementById('menu');
       menu.classList.toggle('open');
     }
 
-    // Fecha o menu ao clicar em um link
     document.addEventListener("DOMContentLoaded", () => {
       document.querySelectorAll('#menu a').forEach(link => {
         link.addEventListener('click', () => {
           document.getElementById('menu').classList.remove('open');
+        });
+      });
+
+      // Scroll suave para ancoragens
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
         });
       });
     });
