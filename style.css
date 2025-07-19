@@ -220,7 +220,7 @@ nav ul li a:focus {
   100% { background-position: 0% 50%; }
 }
 
-.sobre, .servicos, .clientes {
+.sobre, .servicos, .clientes, .produtos {
   padding: 4rem 0;
   background: #121232;
   text-align: center;
@@ -359,7 +359,6 @@ footer {
   transform: translateY(20px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
-
 [data-animate].active {
   opacity: 1;
   transform: translateY(0);

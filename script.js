@@ -3,14 +3,15 @@ function toggleMenu() {
   menu.classList.toggle('open');
 }
 
-// Scroll suave e fechar menu mobile
 document.addEventListener("DOMContentLoaded", () => {
+  // Fecha o menu mobile ao clicar em um link
   document.querySelectorAll('#menu a').forEach(link => {
     link.addEventListener('click', () => {
       document.getElementById('menu').classList.remove('open');
     });
   });
 
+  // Scroll suave para links de ancoragem
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
@@ -20,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Scroll Reveal
+  // Scroll Reveal para elementos com data-animate
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -32,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
 
-  // Botão voltar ao topo
+  // Botão "Voltar ao Topo"
   const scrollTopBtn = document.getElementById('scrollTopBtn');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 300) {
