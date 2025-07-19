@@ -342,10 +342,6 @@ h2 {
     flex-direction: column;
     align-items: center;
   }
-
-  .whatsapp-msg {
-    display: none;
-  }
 }
 
 footer {
@@ -357,64 +353,39 @@ footer {
   border-top: 1px solid #1e90ff33;
 }
 
-.whatsapp-fixo-wrapper {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  z-index: 1000;
-}
-
-.whatsapp-fixo {
-  width: 60px;
-  height: 60px;
-  background-color: #25d366;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-  animation: pulseWpp 2s infinite;
-  transition: transform 0.2s ease;
-}
-
-.whatsapp-fixo:hover {
-  transform: scale(1.1);
-}
-
-.whatsapp-fixo img {
-  width: 30px;
-  height: 30px;
-  filter: brightness(0) invert(1);
-}
-
-.whatsapp-msg {
-  background-color: #25d366;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 30px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  animation: slideIn 1s ease forwards;
-  white-space: nowrap;
+/* Scroll Reveal */
+[data-animate] {
   opacity: 0;
-  transform: translateX(20px);
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-@keyframes pulseWpp {
-  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-  70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+[data-animate].active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-@keyframes slideIn {
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+/* Botão Voltar ao Topo */
+#scrollTopBtn {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  display: none;
+  background: #1e90ff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 0 10px #1e90ffaa;
+  transition: opacity 0.3s ease;
+}
+
+#scrollTopBtn:hover {
+  background: #3ea0ff;
 }
 
 @media (pointer: coarse) {
