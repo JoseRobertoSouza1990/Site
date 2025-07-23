@@ -220,7 +220,16 @@ nav ul li a:focus {
   100% { background-position: 0% 50%; }
 }
 
-.sobre, .servicos, .clientes, .produtos {
+/* Atualização: seção SOBRE com cor diferenciada */
+.sobre {
+  padding: 4rem 0;
+  background: #151544;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.produtos, .clientes {
   padding: 4rem 0;
   background: #121232;
   text-align: center;
@@ -229,7 +238,11 @@ nav ul li a:focus {
 }
 
 .servicos {
+  padding: 4rem 0;
   background: #1a1a3d;
+  text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
 h2 {
