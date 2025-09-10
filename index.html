@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sites modernos e responsivos para impulsionar sua presença digital." />
+  <title>Web Good | Criação de Sites Modernos e Responsivos</title>
+
+  <!-- Fontes -->
+  <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+  <!-- SEO -->
+  <meta name="keywords" content="criação de sites, site responsivo, web design">
+  <meta name="author" content="Web Good">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="Content-Language" content="pt-br">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Web Good | Sites Profissionais e Responsivos">
+  <meta property="og:description" content="Impulsione sua presença digital com um site moderno e otimizado.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thothweb.com.br">
+  <meta property="og:image" content="https://thothweb.com.br/imagem-destaque.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Web Good | Sites Profissionais e Responsivos">
+  <meta name="twitter:description" content="Criação de sites modernos, rápidos e otimizados para sua empresa.">
+  <meta name="twitter:image" content="https://Thothweb.com.br/imagem-destaque.jpg">
+
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo principal</a>
+
+  <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu de navegação">☰</button>
+
+  <header>
+    <div class="container">
+      <picture>
+        <img src="imagens/Logo_site.png" alt="Logo Web Good" class="logo" />
+      </picture>
+      <nav role="navigation" aria-label="Menu principal">
+        <ul id="menu">
+          <li><a href="#home">Início</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#produtos">Produtos</a></li>
+          <li><a href="#clientes">Clientes</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="container">
+      <h1>Bem-vindo</h1>
+      <p>Seu espaço profissional na internet começa aqui, se você pensa em colocar sua empresa entre as melhores, é essencial ter uma página profissional, para alcançar mais clientes e faturar mais, Fale conosco, Tire suas Dúvidas</p>
+      <a href="https://wa.me/5516994451101?text=Olá!%20Gostaria%20de%20falar%20com%20a%20Impacto%20Web." class="btn-rgb" target="_blank" rel="noopener noreferrer">
+        Fale Conosco
+      </a>
+      <br> 
+    </div>
+    <div class="background-grid"></div>
+  </section>
+
+  <section id="sobre" class="sobre" data-animate>
+    <div class="container">
+      <h2>Sobre Nós</h2>
+      <p>Somos apaixonados por tecnologia e soluções digitais. Criamos <strong>sites</strong>, sistemas e ideias incríveis para sua <strong>empresa</strong> e <strong>pequeno</strong> negócio.</p>
+    </div>
+  </section>
+
+  <!-- NOVA SEÇÃO PRODUTOS -->
+  <section id="produtos" class="produtos" data-animate>
+    <div class="container">
+      <h2>Nossos Produtos</h2>
+      <div class="cards">
+        <div class="card" data-animate>
+          <img src="imagens/criação.png" alt="Produto 1" class="servico-img" loading="lazy">
+          <h3>Sites Profissionais</h3>
+          <p>Modelos de sites criados com a sua identidade pessoal, otimizados com SEO para destaque nos buscadores, totalmente responsivos para todas as telas.</p>
+        </div>
+        <div class="card" data-animate>
+          <img src="imagens/menu_digital.png" alt="Produto 2" class="servico-img" loading="lazy">
+          <h3>Cardápios Digitais</h3>
+          <p>Criamos cardápios digitais para acelerar seu atendimento via whatsapp, com pedidos prontos e link de pagamento via pix.</p>
+        </div>
+        <div class="card" data-animate>
+          <img src="imagens/sistema.png" alt="Produto 3" class="servico-img" loading="lazy">
+          <h3>Sistemas empresariais</h3>
+          <p>Precisa gerenciar sua empresa com cadastro de clientes, parte financeira, emissão de pedidos, controle de estoque e muito mais, tudo online fácil, rápido e seguro.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- SESSÃO NOSSOS SERVIÇOS-->
+
+  <section id="servicos" class="servicos" data-animate>
+    <div class="container">
+      <h2>Nossos Serviços</h2>
+      <div class="cards">
+        <div class="card" data-animate>
+          <img src="imagens/web-design.png" loading="lazy" alt="Imagem de Web Design" class="servico-img">
+          <h3>Web Design</h3>
+          <p>Layouts modernos, responsivos e com ótima experiência do usuário.</p>
+        </div>
+        <div class="card" data-animate>
+          <img src="imagens/desenvolvimento.png" loading="lazy" alt="Imagem de Desenvolvimento" class="servico-img">
+          <h3>Desenvolvimento</h3>
+          <p>Soluções em HTML, CSS, JavaScript, e mais!</p>
+        </div>
+        <div class="card" data-animate>
+          <img src="imagens/consultoria.png" loading="lazy" alt="Imagem de Consultoria" class="servico-img">
+          <h3>Consultoria</h3>
+          <p>Tiramos suas ideias do papel com planejamento digital eficaz.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="clientes" class="clientes" data-animate>
+    <div class="container">
+      <h2>Opinião de Clientes</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card" data-animate>
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="João Silva" class="avatar" loading="lazy">
+          <blockquote>
+            <p>"A 'Web Good' transformou nosso site! Atendimento excelente e soluções criativas."</p>
+            <footer>- João Silva, CEO da Empresa XYZ</footer>
+          </blockquote>
+        </div>
+        <div class="testimonial-card" data-animate>
+          <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Maria Oliveira" class="avatar" loading="lazy">
+          <blockquote>
+            <p>"Profissionalismo e qualidade do começo ao fim do projeto. Recomendo muito."</p>
+            <footer>- Maria Oliveira, Diretora de Marketing</footer>
+          </blockquote>
+        </div>
+        <div class="testimonial-card" data-animate>
+          <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Carlos Pereira" class="avatar" loading="lazy">
+          <blockquote>
+            <p>"Equipe dedicada, cumpriu prazos e entregou um site incrível para nosso negócio."</p>
+            <footer>- Carlos Pereira, Empreendedor</footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; <span id="year"></span> - <strong>Web Good</strong>. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Botão voltar ao topo -->
+  <button id="scrollTopBtn" aria-label="Voltar ao topo">↑</button>
+
+</body>
+</html>
