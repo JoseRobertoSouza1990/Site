@@ -225,17 +225,26 @@ nav ul li a:focus {
   100% { background-position: 0% 50%; }
 }
 
-/* Atualização: seção SOBRE com cor diferenciada */
+/* Atualização: seção SOBRE com cor diferenciada e menos espaço */
 .sobre {
-  padding: 4rem 0;
+  padding: 2rem 0; /* Reduzido de 4rem para 2rem */
   background: #151544;
   text-align: center;
   position: relative;
   z-index: 1;
 }
 
-.produtos, .clientes {
-  padding: 4rem 0;
+/* Atualização: seção PRODUTOS com menos espaço */
+.produtos {
+  padding: 2rem 0; /* Reduzido de 4rem para 2rem */
+  background: #121232;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.clientes {
+  padding: 2rem 0;
   background: #121232;
   text-align: center;
   position: relative;
@@ -243,7 +252,7 @@ nav ul li a:focus {
 }
 
 .servicos {
-  padding: 4rem 0;
+  padding: 2rem 0;
   background: #1a1a3d;
   text-align: center;
   position: relative;
@@ -381,7 +390,6 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
-
 
 #scrollTopBtn:hover {
   background: #3ea0ff;
