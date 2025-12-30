@@ -1,10 +1,11 @@
-
-/*.bungee-regular {
+/*
+.bungee-regular {
   font-family: "Bungee", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 */
+
 * {
   margin: 0;
   padding: 0;
@@ -422,7 +423,8 @@ a:focus-visible, button:focus-visible, [role="button"]:focus-visible {
   background: #121232; color: #fff; padding: .5rem .75rem; border-radius: .5rem;
   box-shadow: 0 0 0 3px #1e90ff;
 }
-/* Botão flutuante do WhatsApp */
+
+/* Botão flutuante do WhatsApp com pulso */
 .whatsapp-float {
   position: fixed;
   width: 60px;
@@ -436,15 +438,30 @@ a:focus-visible, button:focus-visible, [role="button"]:focus-visible {
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
   z-index: 1000;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: pulse 2s infinite;
 }
 
 .whatsapp-float:hover {
   transform: scale(1.1);
   box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.4);
+  animation: none; /* Para a animação ao passar o mouse */
 }
 
 .whatsapp-icon {
   width: 35px;
   height: 35px;
   margin-top: 12px;
+}
+
+/* Animação de pulso */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
 }
