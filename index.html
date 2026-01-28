@@ -49,9 +49,10 @@
         <ul id="menu">
           <li><a href="#home">Início</a></li>
           <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#servicos">Serviços</a></li>
           <li><a href="#produtos">Produtos</a></li>
-          
+          <li><a href="#planos">Planos</a></li>
+          <li><a href="#motivo">Importância</a></li>
+          <li><a href="#clientes">Serviços</a></li>
         </ul>
       </nav>
     </div>
@@ -61,7 +62,7 @@
   <main id="conteudo-principal">
     <section id="home" class="hero">
       <div class="container">
-        <h1>Bem-vindo </h1>
+        <h1>Bem-vindo</h1>
         <p>Seu espaço profissional na internet começa aqui. Se você pensa em colocar sua empresa entre as melhores, é essencial ter uma página profissional para alcançar mais clientes e faturar mais. Fale conosco e tire suas dúvidas!</p>
         <a href="https://wa.me/5516992976187?text=Olá!%20Gostaria%20de%20falar%20com%20a%20Web%20Good%20sobre%20criação%20de%20sites."
            class="btn-rgb" 
@@ -105,35 +106,107 @@
       </div>
     </section>
 
-    <!-- SEÇÃO SERVIÇOS -->
-    <section id="servicos" class="servicos" data-animate>
+    <!-- SEÇÃO NOSSOS PLANOS -->
+    <section id="planos" class="planos" data-animate>
       <div class="container">
-        <h2>Nossos Serviços</h2>
-        <div class="cards">
-          <div class="card" data-animate>
-            <img src="imagens/web-design.png" loading="lazy" alt="Web Design" class="servico-img">
-            <h3>Web Design</h3>
-            <p>Layouts modernos, responsivos e com ótima experiência do usuário.</p>
+        <h2>Nossos Planos</h2>
+        <p class="subtitle">Escolha a solução ideal para transformar sua presença digital</p>
+        
+        <div class="planos-container">
+          
+          <!-- Plano Básico -->
+          <div class="plano-card" data-animate>
+            <div class="plano-header">
+              <h3>Sites Rápidos</h3>
+              <div class="plano-tag">Para quem está começando</div>
+              <div class="preco">
+                <span class="valor">R$ 1.297</span>
+                <span class="periodo">ou 12x R$ 129</span>
+              </div>
+            </div>
+            
+            <div class="plano-destaque">
+              <span>⚡ Entrega em 7 dias</span>
+            </div>
+            
+            <ul class="recursos">
+              <li><strong>✓ Site institucional</strong> (até 5 páginas)</li>
+              <li>✓ Design responsivo e moderno</li>
+              <li>✓ Otimizado para Google</li>
+              <li>✓ Formulário de contato</li>
+              <li>✓ Integração com WhatsApp</li>
+              <li>✓ Galeria de fotos</li>
+              <li>✓ Suporte por 30 dias</li>
+              <li>✓ Hospedagem por 1 ano</li>
+              <li>✓ Certificado SSL</li>
+            </ul>
+            
+            <div class="plano-nota">
+              <p>Ideal para: Profissionais liberais, pequenas empresas e quem precisa de presença online rápida.</p>
+            </div>
+            
+            <a href="https://wa.me/5516992976187?text=Olá!%20Tenho%20interesse%20no%20plano%20Sites%20Rápidos%20(R$%201.297)"
+               class="btn-plano"
+               target="_blank"
+               rel="noopener noreferrer">
+              Quero este plano
+            </a>
           </div>
-          <div class="card" data-animate>
-            <img src="imagens/desenvolvimento.png" loading="lazy" alt="Desenvolvimento Web" class="servico-img">
-            <h3>Desenvolvimento</h3>
-            <p>Soluções em HTML, CSS, JavaScript, PHP, Banco de dados MySQL e mais!</p>
+          
+          <!-- Plano Premium - Mais Escolhido -->
+          <div class="plano-card destaque" data-animate>
+            <div class="plano-badge">⭐ MAIS ESCOLHIDO</div>
+            
+            <div class="plano-header">
+              <h3>Sistema Completo</h3>
+              <div class="plano-tag">Tudo que sua empresa precisa</div>
+              <div class="preco">
+                <span class="valor">R$ 2.997</span>
+                <span class="periodo">ou 12x R$ 299</span>
+              </div>
+            </div>
+            
+            <div class="plano-destaque">
+              <span>🎯 Vende mais, trabalha menos</span>
+            </div>
+            
+            <ul class="recursos">
+              <li><strong>✓ Tudo do plano anterior</strong></li>
+              <li>✓ + Sistema administrativo</li>
+              <li>✓ Painel para gerenciar conteúdo</li>
+              <li>✓ Blog profissional integrado</li>
+              <li>✓ SEO avançado (rankear no Google)</li>
+              <li>✓ Google Analytics configurado</li>
+              <li>✓ Integração com redes sociais</li>
+              <li>✓ Suporte por 6 meses</li>
+              <li>✓ Backup automático</li>
+              <li>✓ E-commerce básico (opcional)</li>
+            </ul>
+            
+            <div class="plano-nota">
+              <p>Ideal para: Empresas que querem crescer, controlar seu negócio online e vender mais.</p>
+            </div>
+            
+            <a href="https://wa.me/5516992976187?text=Olá!%20Tenho%20interesse%20no%20plano%20Sistema%20Completo%20(R$%202.997)%20-%20MAIS%20ESCOLHIDO"
+               class="btn-plano destaque"
+               target="_blank"
+               rel="noopener noreferrer">
+              Quero vender mais
+            </a>
           </div>
-          <div class="card" data-animate>
-            <img src="imagens/consultoria.png" loading="lazy" alt="Marketing Digital" class="servico-img">
-            <h3>Marketing Digital</h3>
-            <p>Divulgação focada em resultados, Google Ads, Google Analytics para métricas e acompanhar o desempenho do seu site.</p>
-          </div>
+          
+        </div>
+        
+        <!-- Observação -->
+        <div class="planos-observacao">
+          <p><strong>Personalizamos conforme sua necessidade!</strong> Os valores podem variar conforme funcionalidades extras. Entre em contato para um orçamento exato.</p>
         </div>
       </div>
     </section>
 
     <section id="motivo" class="motivo" data-animate>
       <div class="container" style="text-align: center; padding: 20px 0;">
-        
           <h2 style="margin-left: 2px; margin-right: 2px;">Motivos para ter um site</h2>
-        
         <div style="max-width: 900px; margin: 0 auto; font-size: 1.1rem; line-height: 1.7; padding: 20px 10px;">
           <p>
            Ter um site é essencial para quem deseja crescer e se destacar no mercado digital.
@@ -146,7 +219,7 @@
       </div>
     </section>
 
-    <!-- SEÇÃO CLIENTES (ATUALIZADA) -->
+    <!-- SEÇÃO SERVIÇOS ADICIONAIS -->
     <section id="clientes" class="clientes" data-animate>
       <div class="container">
         <h2>Também fazemos</h2>

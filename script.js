@@ -57,3 +57,31 @@ document.addEventListener("DOMContentLoaded", () => {
   const yearSpan = document.getElementById('year');
   if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 });
+// Atualizar ano no footer
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Adicionar animação de entrada para elementos com data-animate
+function animateOnScroll() {
+  const elements = document.querySelectorAll('[data-animate]');
+  
+  elements.forEach(element => {
+    const elementTop = element.getBoundingClientRect().top;
+    const elementVisible = 150;
+    
+    if (elementTop < window.innerHeight - elementVisible) {
+      element.classList.add('animated');
+    }
+  });
+}
+
+// Executar quando a página carregar e no scroll
+window.addEventListener('load', animateOnScroll);
+window.addEventListener('scroll', animateOnScroll);
+
+// Adicionar classe para elementos já visíveis na carga
+document.querySelectorAll('[data-animate]').forEach(element => {
+  const elementTop = element.getBoundingClientRect().top;
+  if (elementTop < window.innerHeight - 150) {
+    element.classList.add('animated');
+  }
+});
