@@ -34,15 +34,15 @@ body {
 }
 
 .logo {
-  max-width: 250px;
+  max-width: 200px;
   height: auto;
   display: block;
 }
 
 @media (max-width: 800px) {
   .logo {
-    max-width: 250px;
-    margin-bottom: 1rem;
+    max-width: 200px;
+    margin-bottom: 0.4rem;
   }
 }
 
@@ -473,69 +473,70 @@ a:focus-visible, button:focus-visible, [role="button"]:focus-visible {
     box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
   }
 }
-/* ===== ESTILOS PARA SEÇÃO DE PLANOS ===== */
+/* ===== ESTILOS PARA SEÇÃO DE PLANOS (ATUALIZADO PARA COMBINAR) ===== */
 .planos {
   padding: 80px 0;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: #121232; /* Igual ao header */
+  text-align: center;
   position: relative;
-  overflow: hidden;
+  z-index: 1;
 }
 
-.planos::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('data:image/svg+xml,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
-  pointer-events: none;
+.planos h2 {
+  font-weight: 600;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #eee;
 }
 
 .planos .subtitle {
-  text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   margin-bottom: 50px;
-  opacity: 0.9;
+  color: #ccc;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  font-weight: 300;
 }
 
 .planos-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 30px;
   max-width: 1000px;
   margin: 0 auto;
 }
 
 .plano-card {
-  background: white;
-  border-radius: 15px;
-  padding: 30px;
-  color: #333;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  background: #0a0a23; /* Igual aos cards existentes */
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #0008;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  border: 1px solid #1e90ff33;
 }
 
 .plano-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px #1e90ffcc;
 }
 
 .plano-card.destaque {
-  border: 3px solid #f39c12;
-  transform: scale(1.05);
+  border: 2px solid #1e90ff;
+  position: relative;
 }
 
-.plano-card.destaque:hover {
-  transform: scale(1.05) translateY(-10px);
+.plano-card.destaque::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #ff0000, #ffa500);
 }
 
 .plano-badge {
@@ -543,37 +544,36 @@ a:focus-visible, button:focus-visible, [role="button"]:focus-visible {
   top: -15px;
   left: 50%;
   transform: translateX(-50%);
-  background: linear-gradient(45deg, #f39c12, #e74c3c);
+  background: linear-gradient(90deg, #ff0000, #ffa500);
   color: white;
-  padding: 8px 20px;
+  padding: 8px 25px;
   border-radius: 20px;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 0.9rem;
   white-space: nowrap;
   z-index: 2;
-  box-shadow: 0 5px 15px rgba(243, 156, 18, 0.3);
+  box-shadow: 0 0 10px #ff9900, 0 0 20px #ff3300;
 }
 
 .plano-header {
   text-align: center;
   margin-bottom: 25px;
   padding-bottom: 20px;
-  border-bottom: 2px solid #eee;
-  position: relative;
+  border-bottom: 1px solid #1e90ff33;
 }
 
 .plano-header h3 {
   font-size: 1.8rem;
-  color: #2c3e50;
+  color: #1e90ff; /* Azul dodger como nos cards */
   margin-bottom: 10px;
-  font-family: 'Michroma', sans-serif;
+  font-weight: 600;
 }
 
 .plano-tag {
-  color: #7f8c8d;
+  color: #ccc;
   font-size: 0.9rem;
   margin-bottom: 15px;
-  font-weight: 600;
+  font-weight: 300;
 }
 
 .preco {
@@ -583,33 +583,36 @@ a:focus-visible, button:focus-visible, [role="button"]:focus-visible {
 .valor {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #2c3e50;
+  color: #eee;
   display: block;
   line-height: 1;
 }
 
+.valor::before {
+  content: 'R$ ';
+  font-size: 1.5rem;
+  vertical-align: top;
+  font-weight: 500;
+}
+
 .periodo {
-  color: #7f8c8d;
+  color: #ccc;
   font-size: 1rem;
   display: block;
   margin-top: 5px;
-}
-
-.parcelamento {
-  color: #95a5a6;
-  font-size: 0.9rem;
-  margin-top: 5px;
+  font-weight: 300;
 }
 
 .plano-destaque {
-  background: #f8f9fa;
+  background: rgba(30, 144, 255, 0.1);
   padding: 12px;
   border-radius: 8px;
   text-align: center;
   margin: 20px 0;
   font-weight: 600;
-  color: #2c3e50;
-  border-left: 4px solid #3498db;
+  color: #1e90ff;
+  border-left: 4px solid #1e90ff;
+  font-size: 0.95rem;
 }
 
 .recursos {
@@ -621,10 +624,11 @@ a:focus-visible, button:focus-visible, [role="button"]:focus-visible {
 
 .recursos li {
   padding: 10px 0;
-  border-bottom: 1px solid #eee;
-  color: #555;
-  display: flex;
-  align-items: center;
+  border-bottom: 1px solid #1e90ff33;
+  color: #ccc;
+  font-size: 0.95rem;
+  text-align: left;
+  padding-left: 10px;
 }
 
 .recursos li:last-child {
@@ -634,32 +638,38 @@ a:focus-visible, button:focus-visible, [role="button"]:focus-visible {
 .recursos li::before {
   content: '✓';
   margin-right: 10px;
-  color: #2ecc71;
+  color: #1e90ff;
   font-weight: bold;
 }
 
 .recursos strong {
-  color: #2c3e50;
+  color: #eee;
+  font-weight: 600;
 }
 
 .plano-nota {
-  background: #f8f9fa;
+  background: rgba(72, 199, 116, 0.1);
   padding: 15px;
   border-radius: 8px;
   margin: 20px 0;
   font-size: 0.9rem;
-  color: #666;
-  border-left: 4px solid #3498db;
+  color: #ccc;
+  border-left: 4px solid #48c774;
 }
 
 .plano-nota p {
   margin: 0;
+  line-height: 1.5;
+}
+
+.plano-nota strong {
+  color: #eee;
 }
 
 .btn-plano {
   display: block;
   text-align: center;
-  background: linear-gradient(45deg, #667eea, #764ba2);
+  background: #1e90ff;
   color: white;
   padding: 15px;
   border-radius: 8px;
@@ -670,70 +680,110 @@ a:focus-visible, button:focus-visible, [role="button"]:focus-visible {
   margin-top: auto;
   border: none;
   cursor: pointer;
+  font-family: 'Poppins', sans-serif;
 }
 
 .btn-plano:hover {
-  background: linear-gradient(45deg, #764ba2, #667eea);
+  background: #3ea0ff;
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 5px 15px rgba(30, 144, 255, 0.3);
 }
 
 .btn-plano.destaque {
-  background: linear-gradient(45deg, #f39c12, #e74c3c);
+  background: linear-gradient(45deg, #ff0000, #ffa500);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-plano.destaque::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(270deg, red, orange, yellow, lime, cyan, blue, violet, red);
+  background-size: 400% 400%;
+  border-radius: 10px;
+  z-index: -1;
+  animation: rgbBorder 5s linear infinite;
+  filter: blur(4px);
+  opacity: 0.8;
 }
 
 .btn-plano.destaque:hover {
-  background: linear-gradient(45deg, #e74c3c, #f39c12);
+  background: linear-gradient(45deg, #ff3333, #ffcc00);
+  box-shadow: 0 0 10px #ff9900, 0 0 20px #ff3300;
 }
 
 .planos-observacao {
   text-align: center;
   margin-top: 50px;
   padding: 20px;
-  background: rgba(255,255,255,0.1);
+  background: rgba(30, 144, 255, 0.1);
   border-radius: 10px;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
-  backdrop-filter: blur(10px);
+  border: 1px solid #1e90ff33;
 }
 
 .planos-observacao p {
   margin: 0;
   font-size: 1rem;
+  color: #ccc;
+}
+
+.planos-observacao strong {
+  color: #1e90ff;
 }
 
 /* Responsivo para planos */
 @media (max-width: 768px) {
   .planos-container {
     grid-template-columns: 1fr;
-    max-width: 400px;
+    max-width: 500px;
+    gap: 40px;
+  }
+  
+  .plano-card {
+    padding: 1.5rem;
   }
   
   .plano-card.destaque {
     transform: none;
   }
   
-  .plano-card.destaque:hover {
-    transform: translateY(-10px);
-  }
-  
-  .plano-card {
-    padding: 25px;
-  }
-  
   .valor {
     font-size: 2rem;
+  }
+  
+  .planos-observacao {
+    padding: 15px;
+    margin-top: 40px;
   }
 }
 
 @media (max-width: 480px) {
-  .plano-header h3 {
-    font-size: 1.5rem;
+  .planos h2 {
+    font-size: 1.8rem;
   }
   
   .planos .subtitle {
     font-size: 1rem;
-    padding: 0 10px;
+  }
+  
+  .plano-card {
+    padding: 1.25rem;
+  }
+  
+  .plano-header h3 {
+    font-size: 1.5rem;
+  }
+  
+  .plano-badge {
+    padding: 6px 15px;
+    font-size: 0.8rem;
   }
 }
+
