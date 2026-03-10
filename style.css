@@ -522,10 +522,11 @@ a:focus-visible, button:focus-visible, [role="button"]:focus-visible {
 .plano-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 0 25px #1e90ffcc;
+ 
 }
 
 .plano-card.destaque {
-  border: 2px solid #1e90ff;
+  
   position: relative;
 }
 
@@ -536,7 +537,7 @@ a:focus-visible, button:focus-visible, [role="button"]:focus-visible {
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #ff0000, #ffa500);
+  
 }
 
 .plano-badge {
