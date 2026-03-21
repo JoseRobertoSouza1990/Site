@@ -127,54 +127,70 @@
     }
 
     /* ============================================ */
-    /* BLOCO: RESPONSIVIDADE - TABLET E CELULAR     */
-    /* Função: Ativa o menu hamburguer e ajusta     */
-    /*         posicionamento em telas menores      */
-    /* ============================================ */
-    @media (max-width: 768px) {
-      .menu-toggle {
-        display: block;
-      }
+/* BLOCO: RESPONSIVIDADE - TABLET E CELULAR     */
+/* Função: Ativa o menu hamburguer e ajusta     */
+/*         posicionamento em telas menores      */
+/* ============================================ */
+@media (max-width: 768px) {
+  /* Mostra o botão hamburguer */
+  .menu-toggle {
+    display: block;
+  }
 
-      .nav-container {
-        position: relative;
-      }
+  /* ============================================ */
+  /* CORREÇÃO: Garante que o container mantenha   */
+  /*         logo à esquerda e botão à direita    */
+  /* ============================================ */
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
 
-      .nav-menu {
-        position: fixed;
-        top: 80px;
-        left: -100%;
-        width: 100%;
-        height: calc(100vh - 80px);
-        background: #fff;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 2rem;
-        transition: left 0.3s ease;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-      }
+  /* ============================================ */
+  /* CORREÇÃO: Força o botão para a direita       */
+  /* ============================================ */
+  .menu-toggle {
+    margin-left: auto;
+  }
 
-      .nav-menu.active {
-        left: 0;
-      }
+  /* Menu que desliza da esquerda para direita */
+  .nav-menu {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background: #fff;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    transition: left 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
 
-      .nav-menu li {
-        opacity: 0;
-        transform: translateX(-20px);
-        transition: all 0.3s ease;
-      }
+  .nav-menu.active {
+    left: 0;
+  }
 
-      .nav-menu.active li {
-        opacity: 1;
-        transform: translateX(0);
-      }
+  .nav-menu li {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.3s ease;
+  }
 
-      .nav-menu.active li:nth-child(1) { transition-delay: 0.1s; }
-      .nav-menu.active li:nth-child(2) { transition-delay: 0.2s; }
-      .nav-menu.active li:nth-child(3) { transition-delay: 0.3s; }
-      .nav-menu.active li:nth-child(4) { transition-delay: 0.4s; }
-    }
+  .nav-menu.active li {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .nav-menu.active li:nth-child(1) { transition-delay: 0.1s; }
+  .nav-menu.active li:nth-child(2) { transition-delay: 0.2s; }
+  .nav-menu.active li:nth-child(3) { transition-delay: 0.3s; }
+  .nav-menu.active li:nth-child(4) { transition-delay: 0.4s; }
+}
 
     /* ============================================ */
     /* BLOCO: BOTÃO FIXO DO WHATSAPP                */
@@ -321,7 +337,7 @@
   </main>
 
   <footer>
-    
+
   </footer>
 
   <!-- ============================================ -->
