@@ -29,169 +29,368 @@
   <meta name="twitter:description" content="Criação de sites modernos, rápidos e otimizados para sua empresa.">
   <meta name="twitter:image" content="https://webgood.com.br/imagens/imagem-destaque.jpg">
 
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <style>
+    /* ============================================ */
+    /* RESET E CONFIGURAÇÕES GERAIS                 */
+    /* ============================================ */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
+    body {
+      font-family: 'Poppins', sans-serif;
+      padding-top: 80px;
+    }
+
+    /* ============================================ */
+    /* HEADER FIXO                                  */
+    /* ============================================ */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ============================================ */
+    /* BLOCO: CONTAINER PRINCIPAL DO MENU           */
+    /* Função: Estrutura flexível que alinha logo   */
+    /*         à esquerda e menu à direita         */
+    /* ============================================ */
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 80px;
+    }
+
+    /* ============================================ */
+    /* BLOCO: LOGO DO SITE                          */
+    /* Função: Marca/texto do site, fixado à esquerda */
+    /* ============================================ */
+    .logo {
+      font-family: 'Michroma', sans-serif;
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #6c63ff;
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: #ff6584;
+    }
+
+    /* ============================================ */
+    /* MENU DESKTOP - POSICIONADO À DIREITA         */
+    /* ============================================ */
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    .nav-menu a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-menu a:hover {
+      color: #6c63ff;
+    }
+
+    /* ============================================ */
+    /* BLOCO: BOTÃO HAMBURGUER                      */
+    /* Função: Botão que abre/fecha o menu mobile   */
+    /*         Posicionado à direita do container   */
+    /* ============================================ */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.8rem;
+      color: #6c63ff;
+      padding: 10px;
+    }
+
+    /* ============================================ */
+    /* BLOCO: RESPONSIVIDADE - TABLET E CELULAR     */
+    /* Função: Ativa o menu hamburguer e ajusta     */
+    /*         posicionamento em telas menores      */
+    /* ============================================ */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-container {
+        position: relative;
+      }
+
+      .nav-menu {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: #fff;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        transition: left 0.3s ease;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      }
+
+      .nav-menu.active {
+        left: 0;
+      }
+
+      .nav-menu li {
+        opacity: 0;
+        transform: translateX(-20px);
+        transition: all 0.3s ease;
+      }
+
+      .nav-menu.active li {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .nav-menu.active li:nth-child(1) { transition-delay: 0.1s; }
+      .nav-menu.active li:nth-child(2) { transition-delay: 0.2s; }
+      .nav-menu.active li:nth-child(3) { transition-delay: 0.3s; }
+      .nav-menu.active li:nth-child(4) { transition-delay: 0.4s; }
+    }
+
+    /* ============================================ */
+    /* BLOCO: BOTÃO FIXO DO WHATSAPP                */
+    /* Função: Botão flutuante fixo no canto       */
+    /*         inferior direito com animação pulsar */
+    /* ============================================ */
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      background-color: #25d366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+      z-index: 9999;
+      transition: transform 0.3s ease;
+      animation: pulse 2s infinite;
+    }
+
+    /* Efeito hover - aumenta levemente ao passar o mouse */
+    .whatsapp-btn:hover {
+      transform: scale(1.1);
+      animation: none;
+    }
+
+    /* Ícone do WhatsApp */
+    .whatsapp-btn i {
+      font-size: 32px;
+      color: white;
+    }
+
+    /* ============================================ */
+    /* ANIMAÇÃO: PULSAR                            */
+    /* Função: Cria o efeito de pulsação contínua  */
+    /* ============================================ */
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+        transform: scale(1);
+      }
+      70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+        transform: scale(1.05);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+        transform: scale(1);
+      }
+    }
+
+    /* Ajuste para dispositivos móveis */
+    @media (max-width: 768px) {
+      .whatsapp-btn {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+      }
+      
+      .whatsapp-btn i {
+        font-size: 28px;
+      }
+    }
+
+    /* ============================================ */
+    /* CONTEÚDO PARA TESTE                          */
+    /* ============================================ */
+    section {
+      padding: 80px 20px;
+      min-height: 100vh;
+    }
+
+    #sobre { background: #f5f5f5; }
+    #produtos { background: #e8e8e8; }
+    #planos { background: #f5f5f5; }
+    #servicos { background: #e8e8e8; }
+
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+  </style>
 </head>
 <body>
-  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
 
-  <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu de navegação">☰</button>
-
-  <header>
+  <!-- ============================================ -->
+  <!-- BLOCO: HEADER E CONTAINER DO MENU            -->
+  <!-- Função: Estrutura fixa do topo, contendo     -->
+ 
+  <header class="header">
     <div class="container">
-      <picture>
-        <img src="imagens/Logo_site.png" alt="Logo Web Good" class="logo" />
-        <div></div>
-      </picture>
-      <nav role="navigation" aria-label="Menu principal">
-        <ul id="menu">
-          
-          <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#produtos">Produtos</a></li>
-          <li><a href="#planos">Planos</a></li>
-          <li><a href="#motivo">Serviços</a></li>
-          
-        </ul>
-      </nav>
+      <div class="nav-container">
+        <a href="#" class="logo">GR<span>2</span></a>
+        
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+          ☰
+        </button>
+
+        <nav role="navigation" aria-label="Menu principal">
+          <ul class="nav-menu" id="navMenu">
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#produtos">Produtos</a></li>
+            <li><a href="#planos">Planos</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
   </header>
 
-  <!-- Conteúdo principal com ID para o skip link -->
-  <main id="conteudo-principal">
-    <section id="home" class="hero">
+  <main>
+    <section id="sobre">
       <div class="container">
-        <p></p>
-        <h1>Bem-vindo</h1>
-        <p>Seu espaço profissional na internet começa aqui. Se você pensa em colocar sua empresa entre as melhores, é essencial ter uma página profissional para alcançar mais clientes e faturar mais. Fale conosco e tire suas dúvidas!</p>
-        <a href="https://wa.me/5516992976187?text=Olá!%20Gostaria%20de%20falar%20com%20a%20GR2%criação%20de%20sites."
-           class="btn-rgb" 
-           target="_blank" 
-           rel="noopener noreferrer">
-          Fale no WhatsApp
-        </a>
-        <br> 
+        <h2>Sobre</h2>
+        <p>Conteúdo da seção Sobre</p>
       </div>
-      <div class="background-grid"></div>
     </section>
 
- 
-
-    <!-- SEÇÃO NOSSOS PLANOS -->
-    <section id="planos" class="planos" data-animate>
+    <section id="produtos">
       <div class="container">
-        <h2>Nossos Planos</h2>
-        <p class="subtitle">Escolha a solução ideal para transformar sua presença digital</p>
-        
-        <div class="planos-container">
-          
-          <!-- Plano Básico -->
-          <div class="plano-card" data-animate>
-            <div class="plano-header">
-              <h3>Sites</h3>
-              <div class="plano-tag">Para quem está começando</div>
-              <div class="preco">
-                <span class="valor">R$ 499,00*</span>
-                <span class="periodo">consulte *</span>
-              </div>
-            </div>
-            
-            <div class="plano-destaque">
-              <span>⚡ Entrega em 7 dias</span>
-            </div>
-            
-            <ul class="recursos">
-              <li><strong>✓ Site padrão</strong></li>
-              <li>✓ Design responsivo e moderno</li>
-              <li>✓ Otimizado para Google</li>              
-              <li>✓ Integração com WhatsApp</li>
-              <li>✓ Integração com redes sociais</li>              
-              <li>✓ Sem suporte</li>
-              <li>✓ manutenção por conta do cliente</li>
-              <li>✓ Hospedagem por conta do cliente</li>
-              <li>✓ Certificado SSL</li>
-            </ul>
-            
-            <div class="plano-nota">
-              <p>Ideal para: Profissionais liberais, pequenas empresas e quem precisa de presença online rápida.</p>
-            </div>
-            
-            <a href="https://wa.me/5516992976187?text=Olá!%20Tenho%20interesse%20no%20plano%20Sites%20Rápidos"
-               class="btn-plano"
-               target="_blank"
-               rel="noopener noreferrer">
-              Quero este plano
-            </a>
-          </div>
-          
-          <!-- Plano Premium - Mais Escolhido -->
-          <div class="plano-card destaque" data-animate>
-            
-            
-            <div class="plano-header">
-              <h3>Sistema sob demanda</h3>
-              <div class="plano-tag">Tudo que sua empresa precisa</div>
-              <div class="preco">
-                <span class="valor">R$ 149,00*</span>
-                <span class="periodo">mensal por 48 meses</span>
-              </div>
-            </div>
-            
-            <div class="plano-destaque">
-              <span>🎯 tenha mais segurança</span>
-            </div>
-            
-            <ul class="recursos">
-              <li><strong>✓ Tudo do plano anterior</strong></li>                                    
-              <li>✓ SEO avançado (rankear no Google)</li>
-              <li>✓ Google Analytics configurado</li>
-              <li>✓ Integração com redes sociais</li>
-              <li>✓ Suporte por 48 meses</li>
-              <li>✓ Backup automático</li>
-              <li>✓ hospedagem</li>
-              <li>✓ manutenção</li>
-              <li>✓ E-mail profissional</li>
-            </ul>
-            
-            <div class="plano-nota">
-              <p>Ideal para: Empresas que querem crescer, controlar seu negócio online e vender mais, consulte para saber mais, os valores podem variar de acordo com a necessidade de cada cliente</p>
-            </div>
-            
-            <a href="https://wa.me/5516992976187?text=Olá!%20Tenho%20interesse%20no%20plano%20dedicado"
-               class="btn-plano destaque"
-               target="_blank"
-               rel="noopener noreferrer">
-              Quero vender mais
-            </a>
-          </div>
-          
-        </div>
-        
-        <!-- Observação -->
-        <div class="planos-observacao">
-          <p><strong>Personalizamos conforme sua necessidade!</strong> Os valores podem variar conforme funcionalidades extras. Entre em contato para um orçamento exato.</p>
-        </div>
+        <h2>Produtos</h2>
+        <p>Conteúdo da seção Produtos</p>
       </div>
- 
-  
+    </section>
+
+    <section id="planos">
+      <div class="container">
+        <h2>Planos</h2>
+        <p>Conteúdo da seção Planos</p>
+      </div>
+    </section>
+
+    <section id="servicos">
+      <div class="container">
+        <h2>Serviços</h2>
+        <p>Conteúdo da seção Serviços</p>
+      </div>
+    </section>
   </main>
 
   <footer>
-    <div class="container">
-      <p>&copy; <span>2024</span> - <strong>GR2 - sites</strong>. Todos os direitos reservados.</p>
-    </div>
+    
   </footer>
 
-<!-- Botão WhatsApp Flutuante -->
-<a href="https://wa.me/5516992976187?text=Olá!%20Gostaria%20de%20falar%20com%20a%20Web%20Good%."
-   class="whatsapp-float"
-   target="_blank"
-   rel="noopener noreferrer"
-   aria-label="Fale conosco no WhatsApp">
-  <img src="imagens/whatsapp-icon.png"
-       alt="WhatsApp"
-       class="whatsapp-icon">
-</a>
+  <!-- ============================================ -->
+  <!-- BLOCO: BOTÃO FLUTUANTE DO WHATSAPP           -->
+ 
+  <a href="https://wa.me/5516992976187?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20os%20serviços." 
+     class="whatsapp-btn" 
+     target="_blank" 
+     rel="noopener noreferrer"
+     aria-label="Fale conosco pelo WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script>
+    // ============================================
+    // BLOCO: CONTROLE DO MENU HAMBURGUER
+    // Função: Abre/fecha o menu, alterna ícone
+    //         e gerencia eventos de clique
+    // ============================================
+
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    // ============================================
+    // FUNÇÃO: Alternar menu
+    // Quando clica no botão, abre/fecha o menu
+    // e troca o ícone entre ☰ e ✕
+    // ============================================
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      
+      if (navMenu.classList.contains('active')) {
+        menuToggle.textContent = '✕';
+        menuToggle.setAttribute('aria-label', 'Fechar menu');
+      } else {
+        menuToggle.textContent = '☰';
+        menuToggle.setAttribute('aria-label', 'Abrir menu');
+      }
+    });
+
+    // ============================================
+    // FUNÇÃO: Fechar menu ao clicar em link
+    // Melhora a experiência do usuário, fechando
+    // automaticamente após a navegação
+    // ============================================
+    const menuLinks = document.querySelectorAll('.nav-menu a');
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        menuToggle.textContent = '☰';
+        menuToggle.setAttribute('aria-label', 'Abrir menu');
+      });
+    });
+
+    // ============================================
+    // FUNÇÃO: Ajustar menu ao redimensionar tela
+    // Se redimensionar para desktop (>768px),
+    // remove a classe active e garante menu normal
+    // ============================================
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        navMenu.classList.remove('active');
+        menuToggle.textContent = '☰';
+      }
+    });
+  </script>
+
 </body>
 </html>
