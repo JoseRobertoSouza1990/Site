@@ -333,7 +333,110 @@
   height: 80px;
   width: auto;
 }
-   
+/* Footer Moderno e Responsivo */
+.footer {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+    margin-top: auto;
+}
+
+/* Efeito de borda superior */
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1);
+}
+
+/* Ícones das redes sociais */
+.footer i {
+    font-size: 28px;
+    margin: 0 15px;
+    color: #fff;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: inline-block;
+}
+
+/* Efeitos hover nos ícones */
+.footer i:hover {
+    transform: translateY(-5px);
+}
+
+/* Cores específicas para cada ícone no hover */
+.bi-instagram:hover {
+    color: #e4405f;
+    text-shadow: 0 0 15px rgba(228, 64, 95, 0.5);
+}
+
+.bi-linkedin:hover {
+    color: #0077b5;
+    text-shadow: 0 0 15px rgba(0, 119, 181, 0.5);
+}
+
+.bi-youtube:hover {
+    color: #ff0000;
+    text-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+}
+
+
+/* ==================== */
+/* RESPONSIVIDADE */
+/* ==================== */
+
+/* Tablets (768px - 1023px) */
+@media (max-width: 768px) {
+    .footer {
+        padding: 35px 15px;
+    }
+    
+    .footer i {
+        font-size: 24px;
+        margin: 0 12px;
+    }
+    
+    .direitos {
+        font-size: 12px;
+        margin-top: 20px;
+    }
+}
+
+/* Celulares (até 767px) */
+@media (max-width: 480px) {
+    .footer {
+        padding: 30px 10px;
+    }
+    
+    .footer i {
+        font-size: 22px;
+        margin: 0 10px;
+    }
+    
+    .direitos {
+        font-size: 11px;
+        margin-top: 18px;
+        line-height: 1.4;
+    }
+}
+
+/* Celulares muito pequenos (até 320px) */
+@media (max-width: 320px) {
+    .footer i {
+        font-size: 20px;
+        margin: 0 8px;
+    }
+    
+    .direitos {
+        font-size: 10px;
+    }
+}
+
+
   </style>
 </head>
 <body>
@@ -398,16 +501,14 @@
     </section>
   </main>
 
-  <footer class="footer">
-
-         <i class="bi bi-instagram"></i>
-         <i class="bi bi-linkedin"></i>
-         <i class="bi bi-youtube"></i>
-         <br><br>
-
-         <p class="direitos">Desenvolvido por GR2 Soluções digitais - Todos os direitos reservados</p>
-
-  </footer>
+<footer class="footer">
+    <div class="social-icons">
+        <i class="bi bi-instagram"></i>
+        <i class="bi bi-linkedin"></i>
+        <i class="bi bi-youtube"></i>
+    </div>
+    
+</footer>
 
   <!-- ============================================ -->
   <!-- BLOCO: BOTÃO FLUTUANTE DO WHATSAPP           -->
