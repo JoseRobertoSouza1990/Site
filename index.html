@@ -277,6 +277,55 @@
       font-size: 2.5rem;
       margin-bottom: 1rem;
     }
+ 
+/* ============================================ */
+/* SESSÃO BEM VINDO - ALINHAMENTO CENTRAL      */
+/* ============================================ */
+
+#sobre {
+  text-align: center;
+}
+
+#sobre .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#sobre h2 {
+  text-align: center;
+}
+
+#sobre p {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+}
+
+/* ============================================ */
+/* AJUSTE DA IMAGEM - CENTRALIZADA E RESPONSIVA */
+/* ============================================ */
+.img_001 {
+  width: 700px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Ajuste para dispositivos móveis */
+@media (max-width: 768px) {
+  .img_001 {
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  #sobre p {
+    padding: 0 20px;
+  }
+}
+   
   </style>
 </head>
 <body>
@@ -288,7 +337,9 @@
   <header class="header">
     <div class="container">
       <div class="nav-container">
-        <a href="#" class="logo">GR<span>2</span></a>
+        <a href="#" class="logo">GR<span>2</span><br></a>
+        
+        
         
         <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
           ☰
@@ -296,7 +347,7 @@
 
         <nav role="navigation" aria-label="Menu principal">
           <ul class="nav-menu" id="navMenu">
-            <li><a href="#sobre">Sobre</a></li>
+            
             <li><a href="#produtos">Produtos</a></li>
             <li><a href="#planos">Planos</a></li>
             <li><a href="#servicos">Serviços</a></li>
@@ -307,12 +358,15 @@
   </header>
 
   <main>
-    <section id="sobre">
-      <div class="container">
-        <h2>Sobre</h2>
-        <p>Conteúdo da seção Sobre</p>
-      </div>
-    </section>
+  <section id="sobre">
+  <div class="container">
+    <h2>Bem Vindo</h2>
+    <p>Conteúdo da seção Sobre</p>
+    <picture>
+      <img src="imagens/img_001.png" alt="Imagem de boas-vindas" class="img_001">
+    </picture>
+  </div>
+</section>
 
     <section id="produtos">
       <div class="container">
