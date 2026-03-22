@@ -296,12 +296,45 @@
     /* ============================================ */
     /* AJUSTE DA IMAGEM - CENTRALIZADA E RESPONSIVA */
     /* ============================================ */
-    .img_001 {
+    /* .img_001 {
       width: 700px;
       max-width: 100%;
       height: auto;
       display: block;
       margin: 0 auto;
+    } */
+
+    /* ============================================ */
+    /* CONTAINER DO CARROSSEL - PROPORÇÃO CONSISTENTE */
+    /* ============================================ */
+    .fade-container {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    /* Cria uma proporção fixa 16:9 */
+    .fade-container::before {
+      content: "";
+      display: block;
+      padding-bottom: 56.25%;
+    }
+
+    .fade-container img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .fade-container img.active {
+      opacity: 1;
     }
 
     /* ============================================ */
@@ -414,10 +447,10 @@
             font-size: 40px;
         }
         
-        /* Imagem */
-        .img_001 {
-            width: 100%;
-            max-width: 500px;
+        /* Container do carrossel responsivo */
+        .fade-container {
+            max-width: 100%;
+            padding: 0 20px;
         }
         
         #sobre p {
@@ -490,9 +523,11 @@
       <div class="container">
         <h2>Bem Vindo</h2>
         <p>Conteúdo da seção Sobre</p>
-        <picture>
-          <img src="imagens/img_001.png" alt="Imagem de boas-vindas" class="img_001">
-        </picture>
+       <picture class="fade-container">
+          <img src="imagens/img_001.png" alt="Imagem de boas-vindas" class="active">
+          <img src="imagens/img_002.png" alt="" >
+          <img src="imagens/img_003.png" alt="">
+       </picture>
       </div>
     </section>
 
@@ -590,6 +625,14 @@
         menuToggle.textContent = '☰';
       }
     });
+      const imgs = document.querySelectorAll('.fade-container img');
+  let index = 0;
+
+  setInterval(() => {
+    imgs[index].classList.remove('active');
+    index = (index + 1) % imgs.length;
+    imgs[index].classList.add('active');
+  }, 3000); // troca a cada 3 segundos
   </script>
 
 </body>
