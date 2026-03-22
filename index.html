@@ -304,8 +304,8 @@
       height: auto;
       display: block;
       margin: 0 auto;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    
+      
     }
 
     /* ============================================ */
@@ -503,6 +503,9 @@
             padding: 40px 12px;
         }
     }
+    .logo{
+      width: 150px;
+    }
   </style>
 </head>
 <body>
@@ -514,13 +517,16 @@
   <header class="header">
     <div class="container">
       <div class="nav-container">
-        <a href="#" class="logo">GR<span>2</span><br></a>
+        <a href="#" class="logo">
+          <img src="imagens/logo_001.png" alt="" class="logo">
+        </a>
         
         <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
           ☰
         </button>
 
         <nav role="navigation" aria-label="Menu principal">
+         
           <ul class="nav-menu" id="navMenu">
             <li><a href="#produtos">Produtos</a></li>
             <li><a href="#planos">Planos</a></li>
