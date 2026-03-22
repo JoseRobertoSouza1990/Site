@@ -298,45 +298,14 @@
     /* ============================================ */
     /* AJUSTE DA IMAGEM - CENTRALIZADA E RESPONSIVA */
     /* ============================================ */
-    /* .img_001 {
-      width: 700px;
-      max-width: 100%;
+    .imagem-destaque {
+      width: 100%;
+      max-width: 800px;
       height: auto;
       display: block;
       margin: 0 auto;
-    } */
-
-    /* ============================================ */
-    /* CONTAINER DO CARROSSEL - PROPORÇÃO CONSISTENTE */
-    /* ============================================ */
-    .fade-container {
-      position: relative;
-      width: 100%;
-      max-width: 800px;
-      margin: 0 auto;
-      overflow: hidden;
-    }
-
-    /* Cria uma proporção fixa 16:9 */
-    .fade-container::before {
-      content: "";
-      display: block;
-      padding-bottom: 56.25%;
-    }
-
-    .fade-container img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0;
-      transition: opacity 3s ease-in-out;
-    }
-
-    .fade-container img.active {
-      opacity: 1;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     }
 
     /* ============================================ */
@@ -449,12 +418,6 @@
             font-size: 40px;
         }
         
-        /* Container do carrossel responsivo */
-        .fade-container {
-            max-width: 100%;
-            padding: 0 20px;
-        }
-        
         #sobre p {
             padding: 0 20px;
         }
@@ -476,6 +439,12 @@
         
         #sobre {
             min-height: auto;
+        }
+
+        /* Ajuste da imagem */
+        .imagem-destaque {
+            max-width: 100%;
+            padding: 0 20px;
         }
     }
 
@@ -568,11 +537,7 @@
         <h2>Bem Vindo</h2>
         <p>Aqui na <strong>GR2 Soluções digitais</strong> você encontra <strong>apoio</strong> para construir sua presença empresarial online, construir soluções para resolver suas <strong>dores</strong>,
           fazer oque outras empresas não fazem por você e alcançar muito <strong>mais clientes</strong>. </p>
-       <picture class="fade-container">
-          <img src="imagens/img_001.png" alt="Imagem de boas-vindas" class="active">
-          <img src="imagens/img_002.png" alt="" >
-          <img src="imagens/img_003.png" alt="">
-       </picture>
+        <img src="imagens/img_001.png" alt="Imagem de boas-vindas" class="imagem-destaque">
       </div>
     </section>
 
