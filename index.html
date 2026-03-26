@@ -33,6 +33,18 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
+    
+    @import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap');
+
+    .hand_writh {
+    font-family: "Delicious Handrawn", cursive;
+    font-weight: 500;
+    font-style: normal;
+    max-width: 100%;
+    width: auto;
+    margin: 0 auto;
+    }
+
     /* ============================================ */
     /* RESET E CONFIGURAÇÕES GERAIS                 */
     /* ============================================ */
@@ -95,10 +107,19 @@
       font-weight: bold;
       color: #6c63ff;
       text-decoration: none;
+      display: inline-block;
+      line-height: 1;
     }
 
     .logo span {
       color: #ff6584;
+    }
+
+    /* Estilo para imagem da logo */
+    .logo-img {
+      max-width: 150px;
+      height: auto;
+      display: block;
     }
 
     /* ============================================ */
@@ -274,7 +295,9 @@
     /* ============================================ */
     #sobre {
       text-align: center;
-      min-height: calc(100vh - 80px);
+      min-height: auto;
+      padding-top: 40px;
+      padding-bottom: 60px;
     }
 
     #sobre .container {
@@ -282,18 +305,18 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      min-height: calc(90vh - 80px);
-      
+      min-height: auto;
     }
 
     #sobre h2 {
       text-align: center;
+      margin-top: 0;
     }
 
     #sobre p {
       text-align: center;
       max-width: 800px;
-      margin: 0 auto 2rem auto;
+      margin: 0 auto 1.5rem auto;
     }
 
     /* ============================================ */
@@ -305,8 +328,6 @@
       height: auto;
       display: block;
       margin: 0 auto;
-    
-      
     }
 
     /* ============================================ */
@@ -433,12 +454,12 @@
             padding: 60px 20px;
         }
         
-        #sobre .container {
-            min-height: auto;
-            padding: 40px 20px;
+        #sobre {
+            padding-top: 30px;
+            padding-bottom: 50px;
         }
         
-        #sobre {
+        #sobre .container {
             min-height: auto;
         }
 
@@ -446,6 +467,12 @@
         .imagem-destaque {
             max-width: 100%;
             padding: 0 20px;
+        }
+
+        /* Ajuste do texto hand_writh */
+        .hand_writh {
+            font-size: 1.5rem;
+            margin-top: 1rem;
         }
     }
 
@@ -480,9 +507,21 @@
             padding: 50px 15px;
         }
         
+        #sobre {
+            padding-top: 25px;
+            padding-bottom: 40px;
+        }
+        
         #sobre p {
             font-size: 0.95rem;
             padding: 0 15px;
+            margin-bottom: 1rem;
+        }
+
+        /* Ajuste do texto hand_writh */
+        .hand_writh {
+            font-size: 1.2rem;
+            margin-top: 0.8rem;
         }
     }
 
@@ -503,11 +542,11 @@
         section {
             padding: 40px 12px;
         }
-    }
-    .logo{
-      padding-top: 10px;
-      padding-bottom: 5px;
-      width: 150px;
+        
+        #sobre {
+            padding-top: 20px;
+            padding-bottom: 30px;
+        }
     }
   </style>
 </head>
@@ -521,7 +560,7 @@
     <div class="container">
       <div class="nav-container">
         <a href="#" class="logo">
-          <img src="imagens/logo_001.png" alt="" class="logo">
+          <img src="imagens/logo_001.png" alt="GR2 Soluções Digitais" class="logo-img">
         </a>
         
         <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
@@ -547,7 +586,7 @@
         <p>Aqui na <strong>GR2 Soluções digitais</strong> você encontra <strong>apoio</strong> para construir sua presença empresarial online, construir soluções para resolver suas <strong>dores</strong>,
           fazer oque outras empresas não fazem por você e alcançar muito <strong>mais clientes</strong>. </p>
         <img src="imagens/img_001.png" alt="Imagem de boas-vindas" class="imagem-destaque">
-        <h2>Pra nós o impossivel não existe</h2>
+        <h2 class="hand_writh">Pra nós o impossivel não existe</h2>
       </div>
     </section>
 
