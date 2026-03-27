@@ -62,6 +62,7 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      overflow-x: hidden;
     }
 
     main {
@@ -280,6 +281,24 @@
     section {
       padding: 80px 20px;
       min-height: auto;
+      position: relative;
+    }
+
+    /* Efeito de sombra suave ao final de cada seção */
+    section::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(44, 62, 80, 0.2), rgba(243, 156, 18, 0.3), rgba(44, 62, 80, 0.2), transparent);
+    }
+
+    /* Remove a sombra da última seção */
+    section:last-of-type::after {
+      display: none;
     }
 
     #sobre { background: #f5f5f5; }
@@ -404,6 +423,215 @@
         margin: 0;
         font-family: 'Poppins', sans-serif;
         letter-spacing: 0.5px;
+    }
+
+    .direitos a {
+        color: rgba(255, 255, 255, 0.9);
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .direitos a:hover {
+        color: #f39c12;
+    }
+
+    /* ============================================ */
+    /* SEÇÃO DE VANTAGENS - BENEFITS CARDS          */
+    /* ============================================ */
+
+    .benefits {
+        padding: 60px 20px;
+        background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
+        position: relative;
+    }
+
+    .benefits-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        padding: 20px 0;
+    }
+
+    /* ============================================ */
+    /* CARD INDIVIDUAL - EFEITOS DE SOMBRA E HOVER */
+    /* ============================================ */
+    .benefit-card {
+        background: #ffffff;
+        border-radius: 20px;
+        padding: 35px 25px;
+        text-align: center;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05), 0 6px 6px rgba(0, 0, 0, 0.02);
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Efeito de borda gradiente no hover - AZUL para LARANJA */
+    .benefit-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #2c3e50, #f39c12, #2c3e50);
+        transform: scaleX(0);
+        transition: transform 0.4s ease;
+        transform-origin: left;
+    }
+
+    .benefit-card:hover::before {
+        transform: scaleX(1);
+    }
+
+    /* Efeito hover - sombra e elevação */
+    .benefit-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(44, 62, 80, 0.15), 0 12px 20px rgba(243, 156, 18, 0.1);
+    }
+
+    /* ============================================ */
+    /* ÍCONES COM GRADIENTE AZUL E LARANJA         */
+    /* ============================================ */
+    .benefit-icon {
+        font-size: 48px;
+        margin-bottom: 20px;
+        display: inline-block;
+        transition: all 0.3s ease;
+        background: linear-gradient(135deg, #2c3e50, #f39c12);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+
+    /* Efeito hover no ícone */
+    .benefit-card:hover .benefit-icon {
+        transform: scale(1.1) rotate(5deg);
+        background: linear-gradient(135deg, #f39c12, #2c3e50);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+
+    /* ============================================ */
+    /* TÍTULOS E TEXTOS DOS CARDS                   */
+    /* ============================================ */
+    .benefit-card h3 {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #2c3e50;
+        margin-bottom: 12px;
+        letter-spacing: -0.3px;
+    }
+
+    .benefit-card p {
+        font-size: 0.95rem;
+        color: #7f8c8d;
+        line-height: 1.5;
+        margin: 0;
+        font-weight: 500;
+    }
+
+    /* Efeito hover no título */
+    .benefit-card:hover h3 {
+        color: #f39c12;
+        transition: color 0.3s ease;
+    }
+
+    /* ============================================ */
+    /* EFEITO FADE IN AO ROLAR A PÁGINA            */
+    /* ============================================ */
+    .fade-in-section {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .fade-in-section.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* ============================================ */
+    /* RESPONSIVIDADE DOS CARDS                     */
+    /* ============================================ */
+
+    /* Tablets */
+    @media (max-width: 768px) {
+        .benefits {
+            padding: 50px 15px;
+        }
+        
+        .benefits-grid {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .benefit-card {
+            padding: 30px 20px;
+        }
+        
+        .benefit-icon {
+            font-size: 42px;
+        }
+        
+        .benefit-card h3 {
+            font-size: 1.2rem;
+        }
+        
+        .benefit-card p {
+            font-size: 0.9rem;
+        }
+    }
+
+    /* Celulares */
+    @media (max-width: 480px) {
+        .benefits {
+            padding: 40px 12px;
+        }
+        
+        .benefits-grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        
+        .benefit-card {
+            padding: 25px 20px;
+        }
+        
+        .benefit-icon {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+        
+        .benefit-card h3 {
+            font-size: 1.1rem;
+        }
+        
+        .benefit-card p {
+            font-size: 0.85rem;
+        }
+    }
+
+    /* Celulares muito pequenos */
+    @media (max-width: 320px) {
+        .benefit-card {
+            padding: 20px 15px;
+        }
+        
+        .benefit-icon {
+            font-size: 34px;
+        }
+        
+        .benefit-card h3 {
+            font-size: 1rem;
+        }
     }
 
     /* ==================== */
@@ -576,7 +804,8 @@
         <nav role="navigation" aria-label="Menu principal">
          
           <ul class="nav-menu" id="navMenu">
-            <li><a href="#produtos">Produtos</a></li>
+            <li><a href="#sobre">Início</a></li>
+            <li><a href="#services">Vantagens</a></li>
             <li><a href="#planos">Planos</a></li>
             <li><a href="#servicos">Serviços</a></li>
           </ul>
@@ -586,7 +815,7 @@
   </header>
 
   <main>
-    <section id="sobre">
+    <section id="sobre" class="fade-in-section">
       <div class="container">
         <h2>Bem Vindo</h2>
         <p>Aqui na <strong>GR2 Soluções digitais</strong> você encontra <strong>apoio</strong> para construir sua presença empresarial online, construir soluções para resolver suas <strong>dores</strong>,
@@ -596,21 +825,59 @@
       </div>
     </section>
 
-    <section id="produtos">
-      <div class="container">
-        <h2>Produtos</h2>
-        <p>Conteúdo da seção Produtos</p>
-      </div>
+  <!-- Vantagens -->
+    <section class="benefits fade-in-section" id="services">
+        <div class="benefits-container">
+            
+            <div class="benefits-grid">
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="bi bi-credit-card"></i></div>
+                    <h3>PARCELAMENTO</h3>
+                    <p>EM ATÉ 12X NO CARTÃO</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="bi bi-lightning-charge"></i></div>
+                    <h3>ENTREGA RÁPIDA</h3>
+                    <p>E GARANTIDA</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="bi bi-check-circle"></i></div>
+                    <h3>REVISÕES COM</h3>
+                    <p>ESPECIALISTAS</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="bi bi-phone"></i></div>
+                    <h3>DESIGN 100%</h3>
+                    <p>MOBILE E OTIMIZADO</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="bi bi-gear"></i></div>
+                    <h3>SITE TOTALMENTE</h3>
+                    <p>GERENCIÁVEL</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="bi bi-search"></i></div>
+                    <h3>SEO OTIMIZADO</h3>
+                    <p>PARA O GOOGLE</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="bi bi-rocket-takeoff"></i></div>
+                    <h3>SITE ULTRA RÁPIDO</h3>
+                    <p>PARA SEU NEGÓCIO</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="planos">
+    <section id="planos" class="fade-in-section">
       <div class="container">
         <h2>Planos</h2>
         <p>Conteúdo da seção Planos</p>
       </div>
     </section>
 
-    <section id="servicos">
+    <section id="servicos" class="fade-in-section">
       <div class="container">
         <h2>Serviços</h2>
         <p>Conteúdo da seção Serviços</p>
@@ -624,7 +891,7 @@
       <i class="bi bi-linkedin"></i>
       <i class="bi bi-youtube"></i>
     </div>
-    <p class="direitos">Desenvolvido por <a href="http://www.gr2sites.com.br"><strong>GR2 Soluções digitais</strong></a> - Todos os direitos reservados</p>
+    <p class="direitos">Desenvolvido por <a href="http://www.gr2sites.com.br" target="_blank"><strong>GR2 Soluções digitais</strong></a> - Todos os direitos reservados</p>
   </footer>
 
   <!-- ============================================ -->
@@ -690,6 +957,42 @@
         menuToggle.textContent = '☰';
       }
     });
+
+    // ============================================
+    // FUNÇÃO: EFEITO FADE IN AO ROLAR A PÁGINA
+    // Detecta quando as seções entram na viewport
+    // e adiciona a classe 'visible' para ativar o fade in
+    // ============================================
+    
+    // Seleciona todos os elementos com a classe 'fade-in-section'
+    const fadeElements = document.querySelectorAll('.fade-in-section');
+    
+    // Função que verifica se o elemento está visível na tela
+    function checkVisibility() {
+      fadeElements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementBottom = element.getBoundingClientRect().bottom;
+        const windowHeight = window.innerHeight;
+        
+        // Verifica se o elemento está visível (topo acima da tela ou bottom abaixo da tela)
+        // Adiciona um offset de 100px para ativar um pouco antes de entrar completamente
+        if (elementTop < windowHeight - 100 && elementBottom > 0) {
+          element.classList.add('visible');
+        }
+      });
+    }
+    
+    // Executa a verificação quando a página carrega
+    window.addEventListener('load', checkVisibility);
+    
+    // Executa a verificação quando o usuário rola a página
+    window.addEventListener('scroll', checkVisibility);
+    
+    // Executa a verificação quando a janela é redimensionada
+    window.addEventListener('resize', checkVisibility);
+    
+    // Executa uma verificação inicial para elementos já visíveis
+    setTimeout(checkVisibility, 100);
  
   </script>
 
