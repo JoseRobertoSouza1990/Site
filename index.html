@@ -12,22 +12,22 @@
 
   <!-- SEO -->
   <meta name="keywords" content="criação de sites, site responsivo, web design, desenvolvimento web, sistemas personalizados">
-  <meta name="author" content="Web Good">
+  <meta name="author" content="GR2 Soluções Digitais">
   <meta name="robots" content="index, follow">
   <meta http-equiv="Content-Language" content="pt-br">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Web Good | Sites Profissionais e Responsivos">
+  <meta property="og:title" content="GR2 Soluções Digitais | Sites Profissionais e Responsivos">
   <meta property="og:description" content="Impulsione sua presença digital com um site moderno e otimizado.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://webgood.com.br">
-  <meta property="og:image" content="https://webgood.com.br/imagens/imagem-destaque.jpg">
+  <meta property="og:url" content="https://gr2sites.com.br">
+  <meta property="og:image" content="https://gr2sites.com.br/imagens/imagem-destaque.jpg">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Web Good | Sites Profissionais e Responsivos">
+  <meta name="twitter:title" content="GR2 Soluções Digitais | Sites Profissionais e Responsivos">
   <meta name="twitter:description" content="Criação de sites modernos, rápidos e otimizados para sua empresa.">
-  <meta name="twitter:image" content="https://webgood.com.br/imagens/imagem-destaque.jpg">
+  <meta name="twitter:image" content="https://gr2sites.com.br/imagens/imagem-destaque.jpg">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -352,6 +352,149 @@
     }
 
     /* ============================================ */
+    /* SEÇÃO PRESENÇA ONLINE - CARDS MODERNOS      */
+    /* ============================================ */
+    .online-presence {
+      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+      padding: 80px 20px;
+      position: relative;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+      color: #2c3e50;
+      position: relative;
+      display: inline-block;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, #2c3e50, #f39c12, #2c3e50);
+      border-radius: 3px;
+    }
+
+    .presence-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto 50px auto;
+      padding: 0 20px;
+    }
+
+    .presence-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 40px 25px;
+      text-align: center;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05), 0 6px 6px rgba(0, 0, 0, 0.02);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Efeito de borda gradiente no hover */
+    .presence-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #2c3e50, #f39c12, #2c3e50);
+      transform: scaleX(0);
+      transition: transform 0.4s ease;
+      transform-origin: left;
+    }
+
+    .presence-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    /* Efeito hover - sombra e elevação */
+    .presence-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(44, 62, 80, 0.15), 0 12px 20px rgba(243, 156, 18, 0.1);
+    }
+
+    /* Ícones com gradiente */
+    .presence-icon {
+      font-size: 58px;
+      margin-bottom: 20px;
+      display: inline-block;
+      transition: all 0.3s ease;
+      background: linear-gradient(135deg, #2c3e50, #f39c12);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    /* Efeito hover no ícone */
+    .presence-card:hover .presence-icon {
+      transform: scale(1.1) rotate(5deg);
+      background: linear-gradient(135deg, #f39c12, #2c3e50);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .presence-card h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 10px;
+      transition: color 0.3s ease;
+    }
+
+    .presence-card:hover h3 {
+      color: #f39c12;
+    }
+
+    .presence-card p {
+      font-size: 0.95rem;
+      color: #7f8c8d;
+      line-height: 1.5;
+      margin-top: 10px;
+    }
+
+    .presence-text {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 30px 20px;
+      background: linear-gradient(135deg, #f8f9fa, #ffffff);
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .presence-text p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #2c3e50;
+      margin-bottom: 15px;
+    }
+
+    .presence-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    .presence-text strong {
+      color: #f39c12;
+      font-weight: 600;
+    }
+
+    /* ============================================ */
     /* FOOTER MODERNO E RESPONSIVO - VERSÃO ÚNICA   */
     /* ============================================ */
     .footer {
@@ -443,6 +586,29 @@
         padding: 60px 20px;
         background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
         position: relative;
+    }
+
+    .benefits h1 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+        color: #2c3e50;
+        position: relative;
+        display: inline-block;
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+    }
+
+    .benefits h1::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, #2c3e50, #f39c12, #2c3e50);
+        border-radius: 3px;
     }
 
     .benefits-container {
@@ -588,6 +754,23 @@
         .benefit-card p {
             font-size: 0.9rem;
         }
+
+        .section-title {
+            font-size: 2rem;
+            white-space: normal;
+        }
+
+        .presence-card {
+            padding: 30px 20px;
+        }
+
+        .presence-icon {
+            font-size: 48px;
+        }
+
+        .presence-card h3 {
+            font-size: 1.3rem;
+        }
     }
 
     /* Celulares */
@@ -617,6 +800,35 @@
         .benefit-card p {
             font-size: 0.85rem;
         }
+
+        .section-title {
+            font-size: 1.8rem;
+        }
+
+        .presence-grid {
+            gap: 20px;
+        }
+
+        .presence-card {
+            padding: 25px 20px;
+        }
+
+        .presence-icon {
+            font-size: 42px;
+        }
+
+        .presence-card h3 {
+            font-size: 1.2rem;
+        }
+
+        .presence-text p {
+            font-size: 1rem;
+        }
+
+        .benefits h1 {
+            font-size: 2rem;
+            white-space: normal;
+        }
     }
 
     /* Celulares muito pequenos */
@@ -631,6 +843,18 @@
         
         .benefit-card h3 {
             font-size: 1rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+        }
+
+        .presence-icon {
+            font-size: 36px;
+        }
+
+        .presence-card h3 {
+            font-size: 1.1rem;
         }
     }
 
@@ -821,80 +1045,81 @@
         <p>Aqui na <strong>GR2 Soluções digitais</strong> você encontra <strong>apoio</strong> para construir sua presença empresarial online, construir soluções para resolver suas <strong>dores</strong>,
           fazer oque outras empresas não fazem por você e alcançar muito <strong>mais clientes</strong>. </p>
         <img src="imagens/img_001.png" alt="Imagem de boas-vindas" class="imagem-destaque">
-        <h2 class="hand_writh">Pra nós o impossivel não existe</h2>
+        
       </div>
     </section>
-      <!-- Online Presence Section -->
-    <section class="online-presence">
-        <div class="container">
-            <h2 class="section-title">Presença online gera:</h2>
-            <div class="presence-grid">
-                <div class="presence-item">
-                    <div class="presence-icon">👁️</div>
-                    <h3>+ Mais visibilidade</h3>
-                </div>
-                <div class="presence-item">
-                    <div class="presence-icon">🛡️</div>
-                    <h3>+ Mais credibilidade</h3>
-                </div>
-                <div class="presence-item">
-                    <div class="presence-icon">👥</div>
-                    <h3>+ Mais clientes</h3>
-                </div>
-                <div class="presence-item">
-                    <div class="presence-icon">💰</div>
-                    <h3>+ Mais vendas</h3>
-                </div>
-            </div>
-            <div class="presence-text">
-                <p><strong>E o melhor:</strong> você não precisa adivinhar como alcançar tudo isso.</p>
-                <p>Com um método próprio, testado e validado, transformamos o seu site em uma verdadeira máquina de atração e conversão — com foco total em resultados reais e imediatos.</p>
-                <p><strong>» Chegou a hora da sua empresa crescer com inteligência digital.</strong></p>
-            </div>
+    
+    <!-- Online Presence Section - Cards Modernos -->
+    <section class="online-presence fade-in-section">
+      <div class="container">
+        <h2 class="section-title">Presença online gera:</h2>
+        <div class="presence-grid">
+          <div class="presence-card">
+            <div class="presence-icon"><i class="bi bi-eye"></i></div>
+            <h3>+ Mais visibilidade</h3>
+            <p>Seja encontrado por mais clientes nos mecanismos de busca</p>
+          </div>
+          <div class="presence-card">
+            <div class="presence-icon"><i class="bi bi-shield-check"></i></div>
+            <h3>+ Mais credibilidade</h3>
+            <p>Construa confiança e autoridade no seu mercado de atuação</p>
+          </div>
+          <div class="presence-card">
+            <div class="presence-icon"><i class="bi bi-people"></i></div>
+            <h3>+ Mais clientes</h3>
+            <p>Atraia um público qualificado e interessado nos seus serviços</p>
+          </div>
+          <div class="presence-card">
+            <div class="presence-icon"><i class="bi bi-graph-up"></i></div>
+            <h3>+ Mais vendas</h3>
+            <p>Converta visitantes em clientes com estratégias eficientes</p>
+          </div>
         </div>
+        <div class="presence-text">
+          <p><strong>E o melhor:</strong> você não precisa adivinhar como alcançar tudo isso.</p>
+          <p>Com um método próprio, testado e validado, transformamos o seu site em uma verdadeira máquina de atração e conversão — com foco total em resultados reais e imediatos.</p>
+          <p><strong>» Chegou a hora da sua empresa crescer com inteligência digital.</strong></p>
+        </div>
+      </div>
     </section>
 
-
-  <!-- Vantagens -->
-   
+    <!-- Vantagens -->
     <section class="benefits fade-in-section" id="services">
-      <h1>Oque oferecemos</h1>
-        <div class="benefits-container">
-            
-            <div class="benefits-grid">
-                
-                <div class="benefit-card">
-                    <div class="benefit-icon"><i class="bi bi-credit-card"></i></div>
-                    <h3>PAGAMENTO FACILITADO</h3>
-                    <p>Consulte condições</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon"><i class="bi bi-lightning-charge"></i></div>
-                    <h3>ENTREGA RÁPIDA</h3>
-                    <p>Desenvolvimento rápido</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon"><i class="bi bi-check-circle"></i></div>
-                    <h3>CONTEÚDO REVISADO</h3>
-                    <p>Garantindo qualidade</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon"><i class="bi bi-phone"></i></div>
-                    <h3>DESIGN 100% RESPONSIVO</h3>
-                    <p>todos os tamanhos de telas</p>
-                </div>                
-                <div class="benefit-card">
-                    <div class="benefit-icon"><i class="bi bi-search"></i></div>
-                    <h3>SEO OTIMIZADO</h3>
-                    <p>melhor resultado nas buscas pelo GOOGLE</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon"><i class="bi bi-rocket-takeoff"></i></div>
-                    <h3>SITE ULTRA RÁPIDO</h3>
-                    <p>Melhor desempenho de carregamento</p>
-                </div>
-            </div>
+      <h1>O que oferecemos</h1>
+      <div class="benefits-container">
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="benefit-icon"><i class="bi bi-credit-card"></i></div>
+            <h3>PAGAMENTO FACILITADO</h3>
+            <p>Consulte condições especiais</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon"><i class="bi bi-lightning-charge"></i></div>
+            <h3>ENTREGA RÁPIDA</h3>
+            <p>Desenvolvimento ágil e eficiente</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon"><i class="bi bi-check-circle"></i></div>
+            <h3>CONTEÚDO REVISADO</h3>
+            <p>Garantia de qualidade em cada detalhe</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon"><i class="bi bi-phone"></i></div>
+            <h3>DESIGN 100% RESPONSIVO</h3>
+            <p>Perfeito em todos os tamanhos de tela</p>
+          </div>                
+          <div class="benefit-card">
+            <div class="benefit-icon"><i class="bi bi-search"></i></div>
+            <h3>SEO OTIMIZADO</h3>
+            <p>Melhor posição nas buscas do Google</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon"><i class="bi bi-rocket-takeoff"></i></div>
+            <h3>SITE ULTRA RÁPIDO</h3>
+            <p>Carregamento otimizado e performance máxima</p>
+          </div>
         </div>
+      </div>
     </section>
 
     <section id="planos" class="fade-in-section">
