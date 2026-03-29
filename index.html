@@ -54,6 +54,17 @@
       --azul-sky: #38bdf8;
       --azul-neon: #00b4d8;
       --sombra-media: 0 10px 30px rgba(0, 0, 0, 0.15);
+      
+      /* Tamanhos padronizados para cards */
+      --card-padding: 35px 25px;
+      --card-padding-mobile: 25px 20px;
+      --card-border-radius: 20px;
+      --icon-size: 52px;
+      --icon-size-mobile: 44px;
+      --title-size: 1.3rem;
+      --title-size-mobile: 1.1rem;
+      --text-size: 0.95rem;
+      --text-size-mobile: 0.85rem;
     }
 
     .hand_writh {
@@ -283,8 +294,6 @@
 
     /* ============================================ */
     /* SEÇÕES - CADA UMA COM BACKGROUND ÚNICO      */
-    /* SOMENTE SOMBRA MÉDIA ENTRE ELAS             */
-    /* SEM BORDA NO TOPO                           */
     /* ============================================ */
     section {
       padding: 80px 20px;
@@ -375,7 +384,7 @@
     }
 
     /* ============================================ */
-    /* AJUSTE DA IMAGEM                             */
+    /* AJUSTE DA IMAGEM - RESPONSIVA               */
     /* ============================================ */
     .imagem-destaque {
       width: 100%;
@@ -391,46 +400,54 @@
       transform: scale(1.02);
     }
 
-    /* ============================================ */
-    /* CARDS PRESENÇA ONLINE - ESTILO AZUL         */
-    /* ============================================ */
-    .section-title {
-      text-align: center;
-      font-size: 2.5rem;
-      margin-bottom: 50px;
-      color: var(--azul-escuro);
-      position: relative;
-      display: inline-block;
-      left: 50%;
-      transform: translateX(-50%);
-      white-space: nowrap;
+    @media (max-width: 768px) {
+      .imagem-destaque {
+        max-width: 1040px;
+        padding: 0 10px;
+      }
     }
 
-    .section-title::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background: linear-gradient(90deg, var(--azul-bright), var(--azul-neon), var(--azul-bright));
-      border-radius: 3px;
+    @media (max-width: 480px) {
+      .imagem-destaque {
+        max-width: 1200px;
+        width: 100%;
+        padding: 0 5px;
+      }
     }
 
-    .presence-grid {
+    /* ============================================ */
+    /* CARDS PADRONIZADOS - MESMO TAMANHO E COMPORTAMENTO */
+    /* ============================================ */
+    
+    /* Grid padrão para todos os cards */
+    .presence-grid,
+    .benefits-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
       max-width: 1200px;
-      margin: 0 auto 50px auto;
-      padding: 0 20px;
+      margin: 0 auto;
+      padding: 20px;
     }
 
-    .presence-card {
-      background: rgba(255, 255, 255, 0.9);
+    /* Cards de Planos - grid específico */
+    .planos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* ESTILO BASE PARA TODOS OS CARDS */
+    .presence-card,
+    .benefit-card,
+    .plano-card {
+      background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(10px);
-      border-radius: 20px;
-      padding: 40px 25px;
+      border-radius: var(--card-border-radius);
+      padding: var(--card-padding);
       text-align: center;
       transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
@@ -438,9 +455,18 @@
       position: relative;
       overflow: hidden;
       border: 1px solid rgba(59, 130, 246, 0.2);
+      
+      /* Garantindo altura consistente */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 320px;
     }
 
-    .presence-card::before {
+    /* Efeito de borda superior no hover (padronizado) */
+    .presence-card::before,
+    .benefit-card::before,
+    .plano-card::before {
       content: '';
       position: absolute;
       top: 0;
@@ -453,18 +479,26 @@
       transform-origin: left;
     }
 
-    .presence-card:hover::before {
+    .presence-card:hover::before,
+    .benefit-card:hover::before,
+    .plano-card:hover::before {
       transform: scaleX(1);
     }
 
-    .presence-card:hover {
+    /* Efeito hover padronizado */
+    .presence-card:hover,
+    .benefit-card:hover,
+    .plano-card:hover {
       transform: translateY(-10px);
       box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
       border-color: var(--azul-bright);
     }
 
-    .presence-icon {
-      font-size: 58px;
+    /* Ícones padronizados */
+    .presence-icon,
+    .benefit-icon,
+    .plano-icon {
+      font-size: var(--icon-size);
       margin-bottom: 20px;
       display: inline-block;
       transition: all 0.3s ease;
@@ -474,95 +508,44 @@
       color: transparent;
     }
 
-    .presence-card:hover .presence-icon {
+    .presence-card:hover .presence-icon,
+    .benefit-card:hover .benefit-icon,
+    .plano-card:hover .plano-icon {
       transform: scale(1.1) rotate(5deg);
     }
 
-    .presence-card h3 {
-      font-size: 1.5rem;
+    /* Títulos padronizados */
+    .presence-card h3,
+    .benefit-card h3,
+    .plano-card h3 {
+      font-size: var(--title-size);
       font-weight: 600;
       color: var(--azul-escuro);
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       transition: color 0.3s ease;
     }
 
-    .presence-card:hover h3 {
+    .presence-card:hover h3,
+    .benefit-card:hover h3,
+    .plano-card:hover h3 {
       color: var(--azul-bright);
     }
 
-    .presence-card p {
-      font-size: 0.95rem;
+    /* Textos padronizados */
+    .presence-card p,
+    .benefit-card p,
+    .plano-card p {
+      font-size: var(--text-size);
       color: #4b5563;
       line-height: 1.5;
       margin-top: 10px;
     }
 
-    .presence-text {
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 30px 20px;
-      background: rgba(255, 255, 255, 0.8);
-      border-radius: 20px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    }
-
-    .presence-text p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: var(--azul-escuro);
-      margin-bottom: 15px;
-    }
-
-    .presence-text strong {
-      color: var(--azul-bright);
-      font-weight: 600;
-    }
-
-    /* ============================================ */
-    /* CARDS DE PLANOS - ESTILO AZUL ESCURO        */
-    /* ============================================ */
-    .planos-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 40px;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
+    /* Ajuste específico para planos (header e lista) */
     .plano-card {
-      background: rgba(255, 255, 255, 0.95);
-      border-radius: 24px;
-      overflow: hidden;
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.2);
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-    }
-
-    .plano-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 5px;
-      background: linear-gradient(90deg, var(--azul-bright), var(--azul-neon));
-      transform: scaleX(0);
-      transition: transform 0.4s ease;
-      transform-origin: left;
-    }
-
-    .plano-card:hover::before {
-      transform: scaleX(1);
-    }
-
-    .plano-card:hover {
-      transform: translateY(-12px);
-      box-shadow: 0 30px 45px -15px rgba(0, 0, 0, 0.3);
+      padding: 0;
+      justify-content: flex-start;
+      min-height: auto;
     }
 
     .plano-header {
@@ -571,33 +554,11 @@
       border-bottom: 1px solid #e5e7eb;
     }
 
-    .plano-icon {
-      font-size: 64px;
-      margin-bottom: 20px;
-      background: linear-gradient(135deg, var(--azul-bright), var(--azul-neon));
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      display: inline-block;
-    }
-
-    .plano-card h3 {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--azul-escuro);
-      margin-bottom: 20px;
-    }
-
-    .plano-sub {
-      font-size: 0.9rem;
-      color: #6b7280;
-      margin-top: 10px;
-    }
-
     .plano-beneficios {
       list-style: none;
       padding: 30px;
       flex-grow: 1;
+      text-align: left;
     }
 
     .plano-beneficios li {
@@ -605,7 +566,7 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       color: #374151;
       border-bottom: 1px dashed #e5e7eb;
     }
@@ -616,7 +577,7 @@
 
     .plano-beneficios i {
       color: var(--azul-bright);
-      font-size: 1.1rem;
+      font-size: 1rem;
       flex-shrink: 0;
     }
 
@@ -653,8 +614,53 @@
     }
 
     /* ============================================ */
-    /* CARDS DE BENEFÍCIOS - ESTILO AZUL CLARO     */
+    /* TÍTULOS DAS SEÇÕES                          */
     /* ============================================ */
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+      color: var(--azul-escuro);
+      position: relative;
+      display: inline-block;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--azul-bright), var(--azul-neon), var(--azul-bright));
+      border-radius: 3px;
+    }
+
+    .presence-text {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 30px 20px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .presence-text p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: var(--azul-escuro);
+      margin-bottom: 15px;
+    }
+
+    .presence-text strong {
+      color: var(--azul-bright);
+      font-weight: 600;
+    }
+
     .benefits h1 {
       text-align: center;
       font-size: 2.5rem;
@@ -675,88 +681,6 @@
       height: 3px;
       background: linear-gradient(90deg, var(--azul-bright), var(--azul-neon), var(--azul-bright));
       border-radius: 3px;
-    }
-
-    .benefits-container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .benefits-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      padding: 20px 0;
-    }
-
-    .benefit-card {
-      background: rgba(255, 255, 255, 0.95);
-      border-radius: 20px;
-      padding: 35px 25px;
-      text-align: center;
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .benefit-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--azul-bright), var(--azul-neon));
-      transform: scaleX(0);
-      transition: transform 0.4s ease;
-      transform-origin: left;
-    }
-
-    .benefit-card:hover::before {
-      transform: scaleX(1);
-    }
-
-    .benefit-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-    }
-
-    .benefit-icon {
-      font-size: 48px;
-      margin-bottom: 20px;
-      display: inline-block;
-      transition: all 0.3s ease;
-      background: linear-gradient(135deg, var(--azul-bright), var(--azul-neon));
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-
-    .benefit-card:hover .benefit-icon {
-      transform: scale(1.1) rotate(5deg);
-    }
-
-    .benefit-card h3 {
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: var(--azul-escuro);
-      margin-bottom: 12px;
-      letter-spacing: -0.3px;
-    }
-
-    .benefit-card p {
-      font-size: 0.95rem;
-      color: #6b7280;
-      line-height: 1.5;
-      margin: 0;
-      font-weight: 500;
-    }
-
-    .benefit-card:hover h3 {
-      color: var(--azul-bright);
-      transition: color 0.3s ease;
     }
 
     /* ============================================ */
@@ -821,67 +745,145 @@
     }
 
     /* ============================================ */
-    /* RESPONSIVIDADE                               */
+    /* RESPONSIVIDADE PADRONIZADA DOS CARDS        */
     /* ============================================ */
+    
+    /* Tablets */
     @media (max-width: 768px) {
+      .presence-grid,
+      .benefits-grid {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 25px;
+        padding: 15px;
+      }
+      
+      .planos-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 15px;
+      }
+      
+      .presence-card,
+      .benefit-card {
+        padding: var(--card-padding-mobile);
+        min-height: 280px;
+      }
+      
+      .presence-icon,
+      .benefit-icon {
+        font-size: var(--icon-size-mobile);
+      }
+      
+      .presence-card h3,
+      .benefit-card h3 {
+        font-size: var(--title-size-mobile);
+      }
+      
+      .presence-card p,
+      .benefit-card p {
+        font-size: var(--text-size-mobile);
+      }
+      
       .section-title {
         font-size: 2rem;
         white-space: normal;
       }
-
+      
       .benefits h1 {
         font-size: 2rem;
         white-space: normal;
       }
-
-      .planos-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        padding: 10px;
-      }
-
+      
       .plano-card h3 {
         font-size: 1.5rem;
       }
-
-      .imagem-destaque {
-        max-width: 100%;
-        padding: 0 20px;
-      }
-
+      
       h2 {
         font-size: 1.8rem;
       }
     }
 
+    /* Celulares */
     @media (max-width: 480px) {
-      .section-title {
-        font-size: 1.8rem;
-      }
-
-      .benefits h1 {
-        font-size: 1.8rem;
-      }
-
+      .presence-grid,
       .benefits-grid {
         grid-template-columns: 1fr;
         gap: 20px;
+        padding: 10px;
       }
-
-      .presence-grid {
-        gap: 20px;
+      
+      .planos-grid {
+        gap: 25px;
+        padding: 10px;
       }
-
+      
+      .presence-card,
+      .benefit-card {
+        padding: 20px 15px;
+        min-height: 260px;
+      }
+      
+      .presence-icon,
+      .benefit-icon {
+        font-size: 40px;
+        margin-bottom: 15px;
+      }
+      
+      .presence-card h3,
+      .benefit-card h3 {
+        font-size: 1rem;
+        margin-bottom: 8px;
+      }
+      
+      .presence-card p,
+      .benefit-card p {
+        font-size: 0.8rem;
+      }
+      
+      .section-title {
+        font-size: 1.8rem;
+      }
+      
+      .benefits h1 {
+        font-size: 1.8rem;
+      }
+      
       .plano-beneficios li {
         font-size: 0.85rem;
       }
-
-      .benefit-card {
+      
+      .plano-header {
         padding: 25px 20px;
       }
-
+      
+      .plano-beneficios {
+        padding: 20px;
+      }
+      
+      .plano-cta {
+        padding: 0 20px 25px;
+      }
+      
       h2 {
         font-size: 1.5rem;
+      }
+    }
+
+    /* Celulares muito pequenos */
+    @media (max-width: 360px) {
+      .presence-card,
+      .benefit-card {
+        min-height: 240px;
+      }
+      
+      .presence-icon,
+      .benefit-icon {
+        font-size: 36px;
+      }
+      
+      .presence-card h3,
+      .benefit-card h3 {
+        font-size: 0.95rem;
       }
     }
   </style>
@@ -913,7 +915,7 @@
   </header>
 
   <main>
-    <!-- SEÇÃO 1: BEM VINDO - AZUL MUITO CLARO - ALINHADO AO CENTRO -->
+    <!-- SEÇÃO 1: BEM VINDO -->
     <section id="sobre" class="fade-in-section">
       <div class="container">
         <h2>Bem Vindo</h2>
@@ -923,7 +925,7 @@
       </div>
     </section>
     
-    <!-- SEÇÃO 2: PRESENÇA ONLINE - AZUL CLARO COM ONDAS -->
+    <!-- SEÇÃO 2: PRESENÇA ONLINE -->
     <section class="online-presence fade-in-section">
       <div class="container">
         <h2 class="section-title">Presença online gera:</h2>
@@ -949,10 +951,13 @@
             <p>Converta visitantes em clientes com estratégias eficientes</p>
           </div>
         </div>
-     
+        <div class="presence-text">
+          <p><strong>» Chegou a hora da sua empresa crescer.</strong></p>
+        </div>
+      </div>
     </section>
 
-    <!-- SEÇÃO 3: PLANOS - AZUL MÉDIO -->
+    <!-- SEÇÃO 3: PLANOS -->
     <section id="planos" class="fade-in-section">
       <div class="container">
         <h2 class="section-title">Nossos Serviços</h2>
@@ -1021,7 +1026,7 @@
       </div>
     </section>
 
-    <!-- SEÇÃO 4: VANTAGENS - AZUL PROFUNDO -->
+    <!-- SEÇÃO 4: VANTAGENS -->
     <section class="benefits fade-in-section" id="services">
       <h1>O que oferecemos</h1>
       <div class="benefits-container">
@@ -1060,7 +1065,7 @@
       </div>
     </section>
 
-    <!-- SEÇÃO 5: SERVIÇOS - AZUL COBALTO -->
+    <!-- SEÇÃO 5: SERVIÇOS -->
     <section id="servicos" class="fade-in-section">
       <div class="container">
         <h2>Serviços</h2>
