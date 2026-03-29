@@ -53,6 +53,7 @@
       --azul-cobalto: #004e92;
       --azul-sky: #38bdf8;
       --azul-neon: #00b4d8;
+      --sombra-media: 0 10px 30px rgba(0, 0, 0, 0.15);
     }
 
     .hand_writh {
@@ -282,15 +283,16 @@
 
     /* ============================================ */
     /* SEÇÕES - CADA UMA COM BACKGROUND ÚNICO      */
+    /* E SOMBRA MÉDIA ENTRE ELAS                   */
     /* ============================================ */
     section {
       padding: 80px 20px;
       min-height: auto;
       position: relative;
-      overflow: hidden;
+      box-shadow: var(--sombra-media);
     }
 
-    /* Efeito decorativo em cada seção */
+    /* Efeito decorativo no topo de cada seção (borda gradiente) */
     section::before {
       content: '';
       position: absolute;
@@ -301,9 +303,27 @@
       background: linear-gradient(90deg, var(--azul-bright), var(--azul-neon), var(--azul-cielo));
     }
 
-    /* Seção 1: Bem Vindo - Azul Muito Claro */
+    /* Seção 1: Bem Vindo - Azul Muito Claro - ALINHADO AO CENTRO */
     #sobre {
       background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #bae6fd 100%);
+      text-align: center;
+    }
+
+    #sobre .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #sobre h2 {
+      text-align: center;
+    }
+
+    #sobre p {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 1.5rem auto;
     }
 
     /* Seção 2: Presença Online - Azul Claro com ondas */
@@ -913,7 +933,7 @@
   </header>
 
   <main>
-    <!-- SEÇÃO 1: BEM VINDO - AZUL MUITO CLARO -->
+    <!-- SEÇÃO 1: BEM VINDO - AZUL MUITO CLARO - ALINHADO AO CENTRO -->
     <section id="sobre" class="fade-in-section">
       <div class="container">
         <h2>Bem Vindo</h2>
