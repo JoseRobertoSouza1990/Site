@@ -90,8 +90,6 @@
 
     /* ============================================ */
     /* BLOCO: CONTAINER PRINCIPAL DO MENU           */
-    /* Função: Estrutura flexível que alinha logo   */
-    /*         à esquerda e menu à direita         */
     /* ============================================ */
     .nav-container {
       display: flex;
@@ -102,7 +100,6 @@
 
     /* ============================================ */
     /* BLOCO: LOGO DO SITE                          */
-    /* Função: Marca/texto do site, fixado à esquerda */
     /* ============================================ */
     .logo {
       font-family: 'Michroma', sans-serif;
@@ -147,8 +144,6 @@
 
     /* ============================================ */
     /* BLOCO: BOTÃO HAMBURGUER                      */
-    /* Função: Botão que abre/fecha o menu mobile   */
-    /*         Posicionado à direita do container   */
     /* ============================================ */
     .menu-toggle {
       display: none;
@@ -162,16 +157,12 @@
 
     /* ============================================ */
     /* BLOCO: RESPONSIVIDADE - TABLET E CELULAR     */
-    /* Função: Ativa o menu hamburguer e ajusta     */
-    /*         posicionamento em telas menores      */
     /* ============================================ */
     @media (max-width: 768px) {
-      /* Mostra o botão hamburguer */
       .menu-toggle {
         display: block;
       }
 
-      /* Garante que o container mantenha logo à esquerda e botão à direita */
       .nav-container {
         display: flex;
         justify-content: space-between;
@@ -179,12 +170,10 @@
         width: 100%;
       }
 
-      /* Força o botão para a direita */
       .menu-toggle {
         margin-left: auto;
       }
 
-      /* Menu que desliza da esquerda para direita */
       .nav-menu {
         position: fixed;
         top: 80px;
@@ -223,8 +212,6 @@
 
     /* ============================================ */
     /* BLOCO: BOTÃO FIXO DO WHATSAPP                */
-    /* Função: Botão flutuante fixo no canto       */
-    /*         inferior direito com animação pulsar */
     /* ============================================ */
     .whatsapp-btn {
       position: fixed;
@@ -244,13 +231,11 @@
       animation: pulse 2s infinite;
     }
 
-    /* Efeito hover - aumenta levemente ao passar o mouse */
     .whatsapp-btn:hover {
       transform: scale(1.1);
       animation: none;
     }
 
-    /* Ícone do WhatsApp */
     .whatsapp-btn i {
       font-size: 32px;
       color: white;
@@ -258,7 +243,6 @@
 
     /* ============================================ */
     /* ANIMAÇÃO: PULSAR                            */
-    /* Função: Cria o efeito de pulsação contínua  */
     /* ============================================ */
     @keyframes pulse {
       0% {
@@ -284,7 +268,6 @@
       position: relative;
     }
 
-    /* Efeito de sombra suave ao final de cada seção */
     section::after {
       content: '';
       position: absolute;
@@ -296,7 +279,6 @@
       background: linear-gradient(90deg, transparent, rgba(44, 62, 80, 0.2), rgba(243, 156, 18, 0.3), rgba(44, 62, 80, 0.2), transparent);
     }
 
-    /* Remove a sombra da última seção */
     section:last-of-type::after {
       display: none;
     }
@@ -404,7 +386,6 @@
       overflow: hidden;
     }
 
-    /* Efeito de borda gradiente no hover */
     .presence-card::before {
       content: '';
       position: absolute;
@@ -422,13 +403,11 @@
       transform: scaleX(1);
     }
 
-    /* Efeito hover - sombra e elevação */
     .presence-card:hover {
       transform: translateY(-10px);
       box-shadow: 0 20px 40px rgba(44, 62, 80, 0.15), 0 12px 20px rgba(243, 156, 18, 0.1);
     }
 
-    /* Ícones com gradiente */
     .presence-icon {
       font-size: 58px;
       margin-bottom: 20px;
@@ -440,7 +419,6 @@
       color: transparent;
     }
 
-    /* Efeito hover no ícone */
     .presence-card:hover .presence-icon {
       transform: scale(1.1) rotate(5deg);
       background: linear-gradient(135deg, #f39c12, #2c3e50);
@@ -506,7 +484,6 @@
         z-index: 1;
     }
 
-    /* Efeito de borda superior */
     .footer::before {
         content: '';
         position: absolute;
@@ -517,7 +494,6 @@
         background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1);
     }
 
-    /* Container dos ícones sociais */
     .social-icons {
         display: flex;
         justify-content: center;
@@ -526,7 +502,6 @@
         margin-bottom: 10px;
     }
 
-    /* Ícones das redes sociais - VERSÃO ÚNICA */
     .footer i {
         font-size: 28px;
         color: #fff;
@@ -538,12 +513,10 @@
         line-height: 1;
     }
 
-    /* Efeitos hover nos ícones */
     .footer i:hover {
         transform: translateY(-5px);
     }
 
-    /* Cores específicas para cada ícone no hover */
     .bi-instagram:hover {
         color: #e4405f;
         text-shadow: 0 0 15px rgba(228, 64, 95, 0.5);
@@ -559,7 +532,6 @@
         text-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
     }
 
-    /* Texto de direitos autorais - DEFINIÇÃO BASE */
     .direitos {
         color: rgba(255, 255, 255, 0.7);
         font-size: 14px;
@@ -623,9 +595,6 @@
         padding: 20px 0;
     }
 
-    /* ============================================ */
-    /* CARD INDIVIDUAL - EFEITOS DE SOMBRA E HOVER */
-    /* ============================================ */
     .benefit-card {
         background: #ffffff;
         border-radius: 20px;
@@ -638,7 +607,6 @@
         overflow: hidden;
     }
 
-    /* Efeito de borda gradiente no hover - AZUL para LARANJA */
     .benefit-card::before {
         content: '';
         position: absolute;
@@ -656,15 +624,11 @@
         transform: scaleX(1);
     }
 
-    /* Efeito hover - sombra e elevação */
     .benefit-card:hover {
         transform: translateY(-10px);
         box-shadow: 0 20px 40px rgba(44, 62, 80, 0.15), 0 12px 20px rgba(243, 156, 18, 0.1);
     }
 
-    /* ============================================ */
-    /* ÍCONES COM GRADIENTE AZUL E LARANJA         */
-    /* ============================================ */
     .benefit-icon {
         font-size: 48px;
         margin-bottom: 20px;
@@ -676,7 +640,6 @@
         color: transparent;
     }
 
-    /* Efeito hover no ícone */
     .benefit-card:hover .benefit-icon {
         transform: scale(1.1) rotate(5deg);
         background: linear-gradient(135deg, #f39c12, #2c3e50);
@@ -685,9 +648,6 @@
         color: transparent;
     }
 
-    /* ============================================ */
-    /* TÍTULOS E TEXTOS DOS CARDS                   */
-    /* ============================================ */
     .benefit-card h3 {
         font-size: 1.3rem;
         font-weight: 600;
@@ -704,7 +664,6 @@
         font-weight: 500;
     }
 
-    /* Efeito hover no título */
     .benefit-card:hover h3 {
         color: #f39c12;
         transition: color 0.3s ease;
@@ -728,7 +687,6 @@
     /* RESPONSIVIDADE DOS CARDS                     */
     /* ============================================ */
 
-    /* Tablets */
     @media (max-width: 768px) {
         .benefits {
             padding: 50px 15px;
@@ -773,7 +731,6 @@
         }
     }
 
-    /* Celulares */
     @media (max-width: 480px) {
         .benefits {
             padding: 40px 12px;
@@ -831,7 +788,6 @@
         }
     }
 
-    /* Celulares muito pequenos */
     @media (max-width: 320px) {
         .benefit-card {
             padding: 20px 15px;
@@ -858,13 +814,7 @@
         }
     }
 
-    /* ==================== */
-    /* RESPONSIVIDADE UNIFICADA */
-    /* ==================== */
-
-    /* Tablets e dispositivos médios */
     @media (max-width: 768px) {
-        /* Footer */
         .footer {
             padding: 35px 15px;
         }
@@ -882,7 +832,6 @@
             font-size: 12px;
         }
         
-        /* WhatsApp */
         .whatsapp-btn {
             width: 70px;
             height: 70px;
@@ -898,12 +847,10 @@
             padding: 0 20px;
         }
 
-        /* Ajuste de títulos responsivos */
         h2 {
             font-size: 1.8rem;
         }
         
-        /* Ajuste de padding das seções */
         section {
             padding: 60px 20px;
         }
@@ -917,20 +864,17 @@
             min-height: auto;
         }
 
-        /* Ajuste da imagem */
         .imagem-destaque {
             max-width: 100%;
             padding: 0 20px;
         }
 
-        /* Ajuste do texto hand_writh */
         .hand_writh {
             font-size: 2.2rem;
             margin-top: 1rem;
         }
     }
 
-    /* Celulares */
     @media (max-width: 480px) {
         .footer {
             padding: 30px 15px;
@@ -951,12 +895,10 @@
             padding: 0 10px;
         }
         
-        /* Ajuste adicional de títulos */
         h2 {
             font-size: 1.5rem;
         }
         
-        /* Ajuste de padding das seções */
         section {
             padding: 50px 15px;
         }
@@ -972,14 +914,12 @@
             margin-bottom: 0;
         }
 
-        /* Ajuste do texto hand_writh */
         .hand_writh {
             font-size: 1.8rem;
             margin-top: 0.8rem;
         }
     }
 
-    /* Celulares muito pequenos */
     @media (max-width: 320px) {
         .footer i {
             font-size: 20px;
@@ -1006,238 +946,233 @@
             font-size: 1.5rem;
         }
     }
+
     /* ============================================ */
-/* SEÇÃO DE PLANOS - CARDS ESTILO HOSPEDAGEM    */
-/* ============================================ */
+    /* SEÇÃO DE PLANOS - CARDS ESTILO HOSPEDAGEM    */
+    /* ============================================ */
 
-#planos {
-    background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
-    padding: 80px 20px;
-}
-
-#planos .section-title {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 50px;
-    color: #2c3e50;
-    position: relative;
-    display: inline-block;
-    left: 50%;
-    transform: translateX(-50%);
-    white-space: nowrap;
-}
-
-#planos .section-title::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(90deg, #2c3e50, #f39c12, #2c3e50);
-    border-radius: 3px;
-}
-
-.planos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* Card individual */
-.plano-card {
-    background: #ffffff;
-    border-radius: 24px;
-    overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.1);
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-/* Borda gradiente no topo */
-.plano-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 5px;
-    background: linear-gradient(90deg, #2c3e50, #f39c12, #2c3e50);
-    transform: scaleX(0);
-    transition: transform 0.4s ease;
-    transform-origin: left;
-}
-
-.plano-card:hover::before {
-    transform: scaleX(1);
-}
-
-.plano-card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 30px 45px -15px rgba(44, 62, 80, 0.25);
-}
-
-/* Cabeçalho do card */
-.plano-header {
-    padding: 35px 30px 25px;
-    text-align: center;
-    border-bottom: 1px solid #eef2f6;
-}
-
-.plano-icon {
-    font-size: 64px;
-    margin-bottom: 20px;
-    background: linear-gradient(135deg, #2c3e50, #f39c12);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    display: inline-block;
-}
-
-.plano-card h3 {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #2c3e50;
-    margin-bottom: 20px;
-}
-
-.plano-preco {
-    margin-bottom: 15px;
-}
-
-.plano-preco .moeda {
-    font-size: 1.2rem;
-    vertical-align: super;
-    color: #7f8c8d;
-}
-
-.plano-preco .valor {
-    font-size: 3rem;
-    font-weight: 800;
-    color: #f39c12;
-    letter-spacing: -2px;
-}
-
-.plano-preco .periodo {
-    font-size: 0.9rem;
-    color: #7f8c8d;
-}
-
-.plano-sub {
-    font-size: 0.9rem;
-    color: #95a5a6;
-    margin-top: 10px;
-}
-
-/* Lista de benefícios */
-.plano-beneficios {
-    list-style: none;
-    padding: 30px;
-    flex-grow: 1;
-}
-
-.plano-beneficios li {
-    padding: 10px 0;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 0.95rem;
-    color: #34495e;
-    border-bottom: 1px dashed #ecf0f1;
-}
-
-.plano-beneficios li:last-child {
-    border-bottom: none;
-}
-
-.plano-beneficios i {
-    color: #27ae60;
-    font-size: 1.1rem;
-    flex-shrink: 0;
-}
-
-/* Botão CTA */
-.plano-cta {
-    padding: 0 30px 30px;
-}
-
-.btn-plano {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    background: linear-gradient(135deg, #25d366, #128c7e);
-    color: white;
-    text-decoration: none;
-    padding: 14px 20px;
-    border-radius: 50px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-}
-
-.btn-plano:hover {
-    transform: scale(1.03);
-    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-}
-
-.btn-plano i {
-    font-size: 1.2rem;
-}
-
-.plano-obs {
-    font-size: 0.7rem;
-    color: #95a5a6;
-    text-align: center;
-    padding: 0 30px 25px;
-    margin: 0;
-}
-
-/* Responsividade da seção de planos */
-@media (max-width: 768px) {
-    .planos-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        padding: 10px;
+    #planos {
+        background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
+        padding: 80px 20px;
     }
-    
-    .plano-card h3 {
-        font-size: 1.5rem;
-    }
-    
-    .plano-preco .valor {
-        font-size: 2.5rem;
-    }
-    
+
     #planos .section-title {
-        font-size: 2rem;
-        white-space: normal;
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 50px;
+        color: #2c3e50;
+        position: relative;
+        display: inline-block;
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
     }
-}
 
-@media (max-width: 480px) {
-    .plano-beneficios li {
-        font-size: 0.85rem;
+    #planos .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, #2c3e50, #f39c12, #2c3e50);
+        border-radius: 3px;
     }
-    
-    .plano-header {
-        padding: 25px 20px;
-    }
-    
-    .plano-beneficios {
+
+    .planos-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
         padding: 20px;
     }
-    
-    .plano-cta {
-        padding: 0 20px 25px;
+
+    .plano-card {
+        background: #ffffff;
+        border-radius: 24px;
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.1);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
     }
-}
+
+    .plano-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 5px;
+        background: linear-gradient(90deg, #2c3e50, #f39c12, #2c3e50);
+        transform: scaleX(0);
+        transition: transform 0.4s ease;
+        transform-origin: left;
+    }
+
+    .plano-card:hover::before {
+        transform: scaleX(1);
+    }
+
+    .plano-card:hover {
+        transform: translateY(-12px);
+        box-shadow: 0 30px 45px -15px rgba(44, 62, 80, 0.25);
+    }
+
+    .plano-header {
+        padding: 35px 30px 25px;
+        text-align: center;
+        border-bottom: 1px solid #eef2f6;
+    }
+
+    .plano-icon {
+        font-size: 64px;
+        margin-bottom: 20px;
+        background: linear-gradient(135deg, #2c3e50, #f39c12);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        display: inline-block;
+    }
+
+    .plano-card h3 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #2c3e50;
+        margin-bottom: 20px;
+    }
+
+    .plano-preco {
+        margin-bottom: 15px;
+    }
+
+    .plano-preco .moeda {
+        font-size: 1.2rem;
+        vertical-align: super;
+        color: #7f8c8d;
+    }
+
+    .plano-preco .valor {
+        font-size: 3rem;
+        font-weight: 800;
+        color: #f39c12;
+        letter-spacing: -2px;
+    }
+
+    .plano-preco .periodo {
+        font-size: 0.9rem;
+        color: #7f8c8d;
+    }
+
+    .plano-sub {
+        font-size: 0.9rem;
+        color: #95a5a6;
+        margin-top: 10px;
+    }
+
+    .plano-beneficios {
+        list-style: none;
+        padding: 30px;
+        flex-grow: 1;
+    }
+
+    .plano-beneficios li {
+        padding: 10px 0;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 0.95rem;
+        color: #34495e;
+        border-bottom: 1px dashed #ecf0f1;
+    }
+
+    .plano-beneficios li:last-child {
+        border-bottom: none;
+    }
+
+    .plano-beneficios i {
+        color: #27ae60;
+        font-size: 1.1rem;
+        flex-shrink: 0;
+    }
+
+    .plano-cta {
+        padding: 0 30px 30px;
+    }
+
+    .btn-plano {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        background: linear-gradient(135deg, #25d366, #128c7e);
+        color: white;
+        text-decoration: none;
+        padding: 14px 20px;
+        border-radius: 50px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+    }
+
+    .btn-plano:hover {
+        transform: scale(1.03);
+        box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    }
+
+    .btn-plano i {
+        font-size: 1.2rem;
+    }
+
+    .plano-obs {
+        font-size: 0.7rem;
+        color: #95a5a6;
+        text-align: center;
+        padding: 0 30px 25px;
+        margin: 0;
+    }
+
+    @media (max-width: 768px) {
+        .planos-grid {
+            grid-template-columns: 1fr;
+            gap: 30px;
+            padding: 10px;
+        }
+        
+        .plano-card h3 {
+            font-size: 1.5rem;
+        }
+        
+        .plano-preco .valor {
+            font-size: 2.5rem;
+        }
+        
+        #planos .section-title {
+            font-size: 2rem;
+            white-space: normal;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .plano-beneficios li {
+            font-size: 0.85rem;
+        }
+        
+        .plano-header {
+            padding: 25px 20px;
+        }
+        
+        .plano-beneficios {
+            padding: 20px;
+        }
+        
+        .plano-cta {
+            padding: 0 20px 25px;
+        }
+    }
   </style>
   
 </head>
@@ -1245,7 +1180,6 @@
 
   <!-- ============================================ -->
   <!-- BLOCO: HEADER E CONTAINER DO MENU            -->
-  <!-- Função: Estrutura fixa do topo, contendo     -->
   <!-- ============================================ -->
  
   <header class="header">
@@ -1260,7 +1194,6 @@
         </button>
 
         <nav role="navigation" aria-label="Menu principal">
-         
           <ul class="nav-menu" id="navMenu">
             <li><a href="#sobre">Início</a></li>
             <li><a href="#services">Vantagens</a></li>
@@ -1277,9 +1210,8 @@
       <div class="container">
         <h2>Bem Vindo</h2>
         <p>Aqui na <strong>GR2 Soluções digitais</strong> você encontra <strong>apoio</strong> para construir sua presença empresarial online, construir soluções para resolver suas <strong>dores</strong>,
-          fazer oque outras empresas não fazem por você e alcançar muito <strong>mais clientes</strong>. </p>
-       <img src="imagens/dev_semfundo.png" alt="">
-        
+          fazer oque outras empresas não fazem por você e alcançar muito <strong>mais clientes</strong>.</p>
+        <img src="imagens/imagem_001.png" alt="Equipe GR2 desenvolvendo soluções digitais" class="imagem-destaque">
       </div>
     </section>
     
@@ -1310,85 +1242,80 @@
           </div>
         </div>
         <div class="presence-text">
-          <p><strong>» Chegou a hora da sua empresa crescer .</strong></p>
+          <p><strong>» Chegou a hora da sua empresa crescer.</strong></p>
         </div>
       </div>
     </section>
+
     <section id="planos" class="fade-in-section">
-  <div class="container">
-    <h2 class="section-title">Nossos Serviços</h2>
-    <div class="planos-grid">
-      
-      <!-- CARD 1: SITES -->
-      <div class="plano-card">
-        <div class="plano-header">
-          <div class="plano-icon"><i class="bi bi-window-stack"></i></div>
-          <h3>Sites Premium</h3>
-          <div class="plano-preco">
+      <div class="container">
+        <h2 class="section-title">Nossos Serviços</h2>
+        <div class="planos-grid">
+          
+          <!-- CARD 1: SITES -->
+          <div class="plano-card">
+            <div class="plano-header">
+              <div class="plano-icon"><i class="bi bi-window-stack"></i></div>
+              <h3>Sites Premium</h3>
+              <p class="plano-sub">Ideal para sua presença digital</p>
+            </div>
             
+            <ul class="plano-beneficios">
+              <li><i class="bi bi-check-circle-fill"></i> Site responsivo (celular, tablet, PC)</li>
+              <li><i class="bi bi-check-circle-fill"></i> Domínio personalizado (.com.br)</li>
+              <li><i class="bi bi-check-circle-fill"></i> Hospedagem inclusa</li>
+              <li><i class="bi bi-check-circle-fill"></i> E-mail profissional (@seudominio)</li>
+              <li><i class="bi bi-check-circle-fill"></i> SEO para Google</li>
+              <li><i class="bi bi-check-circle-fill"></i> Suporte técnico mensal</li>
+              <li><i class="bi bi-check-circle-fill"></i> Até 5 páginas</li>
+              <li><i class="bi bi-check-circle-fill"></i> Botão Whatsapp</li>
+              <li><i class="bi bi-check-circle-fill"></i> Conexão com redes sociais</li>
+              <li><i class="bi bi-check-circle-fill"></i> Backups de segurança</li>
+              <li><i class="bi bi-check-circle-fill"></i> Segurança com SSL</li>
+            </ul>
+            
+            <div class="plano-cta">
+              <a href="https://wa.me/5516992976187?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20plano%20SITE%20PROFISSIONAL" 
+                 class="btn-plano" 
+                 target="_blank"
+                 rel="noopener noreferrer">
+                <i class="bi bi-whatsapp"></i> Solicitar orçamento
+              </a>
+            </div>
           </div>
-          <p class="plano-sub">Ideal para sua presença digital</p>
+          
+          <!-- CARD 2: SISTEMAS -->
+          <div class="plano-card">
+            <div class="plano-header">
+              <div class="plano-icon"><i class="bi bi-code-square"></i></div>
+              <h3>Sistema Personalizado</h3>
+              <p class="plano-sub">Sob medida para o seu negócio</p>
+            </div>
+            
+            <ul class="plano-beneficios">
+              <li><i class="bi bi-check-circle-fill"></i> Desenvolvimento completo</li>
+              <li><i class="bi bi-check-circle-fill"></i> Cadastro de Clientes</li>
+              <li><i class="bi bi-check-circle-fill"></i> Controle de estoque</li>
+              <li><i class="bi bi-check-circle-fill"></i> Agendamento de horários</li>
+              <li><i class="bi bi-check-circle-fill"></i> Emissão de pedidos</li>
+              <li><i class="bi bi-check-circle-fill"></i> Controle de usuários e permissões</li>
+              <li><i class="bi bi-check-circle-fill"></i> Hospedagem dedicada</li>
+              <li><i class="bi bi-check-circle-fill"></i> Suporte prioritário 24/7</li>
+            </ul>
+            
+            <div class="plano-cta">
+              <a href="https://wa.me/5516992976187?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20plano%20SISTEMA%20PERSONALIZADO" 
+                 class="btn-plano" 
+                 target="_blank"
+                 rel="noopener noreferrer">
+                <i class="bi bi-whatsapp"></i> Solicitar orçamento
+              </a>
+            </div>
+            <p class="plano-obs">*Projeto sob consulta. Entre em contato para detalhes.</p>
+          </div>
         </div>
-        
-        <ul class="plano-beneficios">
-          <li><i class="bi bi-check-circle-fill"></i> Site responsivo (celular, tablet, PC)</li>
-          <li><i class="bi bi-check-circle-fill"></i> Domínio personalizado (.com.br)</li>
-          <li><i class="bi bi-check-circle-fill"></i> Hospedagem inclusa</li>
-          <li><i class="bi bi-check-circle-fill"></i> E-mail profissional (@seudominio)</li>
-          <li><i class="bi bi-check-circle-fill"></i> SEO para Google</li>
-          <li><i class="bi bi-check-circle-fill"></i> Suporte técnico mensal</li>
-          <li><i class="bi bi-check-circle-fill"></i> Até 5 páginas</li>
-          <li><i class="bi bi-check-circle-fill"></i> Botão Whatsapp</li>
-          <li><i class="bi bi-check-circle-fill"></i> Conexão com redes sociais</li>
-          <li><i class="bi bi-check-circle-fill"></i> Backups de segurança</li>
-          <li><i class="bi bi-check-circle-fill"></i> Segurança com SSL</li>
-        </ul>
-        
-        <div class="plano-cta">
-          <a href="https://wa.me/5516992976187?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20plano%20SITE%20PROFISSIONAL" 
-             class="btn-plano" 
-             target="_blank"
-             rel="noopener noreferrer">
-            <i class="bi bi-whatsapp"></i> 
-          </a>
-        </div>
-        
       </div>
-      
-      <!-- CARD 2: SISTEMAS -->
-      <div class="plano-card">
-        <div class="plano-header">
-          <div class="plano-icon"><i class="bi bi-code-square"></i></div>
-          <h3>Sistema Personalizado</h3>
-         
-          <p class="plano-sub">Sob medida para o seu negócio</p>
-        </div>
-        
-        <ul class="plano-beneficios">
-          <li><i class="bi bi-check-circle-fill"></i> Desenvolvimento completo </li>
-          <li><i class="bi bi-check-circle-fill"></i> Cadastro de Clientes</li>
-          <li><i class="bi bi-check-circle-fill"></i> Controle de estoque</li>
-          <li><i class="bi bi-check-circle-fill"></i> Agendamento de horários</li>
-          <li><i class="bi bi-check-circle-fill"></i> Emissão de pedidos</li>
-          <li><i class="bi bi-check-circle-fill"></i> Controle de usuários e permissões</li>
-          <li><i class="bi bi-check-circle-fill"></i> Hospedagem dedicada</li>
-          <li><i class="bi bi-check-circle-fill"></i> Suporte prioritário 24/7</li>
-        </ul>
-        
-        <div class="plano-cta">
-          <a href="https://wa.me/5516992976187?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20plano%20SISTEMA%20PERSONALIZADO" 
-             class="btn-plano" 
-             target="_blank"
-             rel="noopener noreferrer">
-            <i class="bi bi-whatsapp"></i> Solicitar orçamento
-          </a>
-        </div>
-        <p class="plano-obs">*Projeto sob consulta. Entre em contato para detalhes.</p>
-      </div>
-      
-    </div>
-  </div>
-</section>
+    </section>
 
     <!-- Vantagens -->
     <section class="benefits fade-in-section" id="services">
@@ -1429,8 +1356,6 @@
       </div>
     </section>
 
-   
-
     <section id="servicos" class="fade-in-section">
       <div class="container">
         <h2>Serviços</h2>
@@ -1463,18 +1388,11 @@
   <script>
     // ============================================
     // BLOCO: CONTROLE DO MENU HAMBURGUER
-    // Função: Abre/fecha o menu, alterna ícone
-    //         e gerencia eventos de clique
     // ============================================
 
     const menuToggle = document.getElementById('menuToggle');
     const navMenu = document.getElementById('navMenu');
 
-    // ============================================
-    // FUNÇÃO: Alternar menu
-    // Quando clica no botão, abre/fecha o menu
-    // e troca o ícone entre ☰ e ✕
-    // ============================================
     menuToggle.addEventListener('click', () => {
       navMenu.classList.toggle('active');
       
@@ -1487,11 +1405,6 @@
       }
     });
 
-    // ============================================
-    // FUNÇÃO: Fechar menu ao clicar em link
-    // Melhora a experiência do usuário, fechando
-    // automaticamente após a navegação
-    // ============================================
     const menuLinks = document.querySelectorAll('.nav-menu a');
     menuLinks.forEach(link => {
       link.addEventListener('click', () => {
@@ -1501,11 +1414,6 @@
       });
     });
 
-    // ============================================
-    // FUNÇÃO: Ajustar menu ao redimensionar tela
-    // Se redimensionar para desktop (>768px),
-    // remove a classe active e garante menu normal
-    // ============================================
     window.addEventListener('resize', () => {
       if (window.innerWidth > 768) {
         navMenu.classList.remove('active');
@@ -1515,40 +1423,27 @@
 
     // ============================================
     // FUNÇÃO: EFEITO FADE IN AO ROLAR A PÁGINA
-    // Detecta quando as seções entram na viewport
-    // e adiciona a classe 'visible' para ativar o fade in
     // ============================================
     
-    // Seleciona todos os elementos com a classe 'fade-in-section'
     const fadeElements = document.querySelectorAll('.fade-in-section');
     
-    // Função que verifica se o elemento está visível na tela
     function checkVisibility() {
       fadeElements.forEach(element => {
         const elementTop = element.getBoundingClientRect().top;
         const elementBottom = element.getBoundingClientRect().bottom;
         const windowHeight = window.innerHeight;
         
-        // Verifica se o elemento está visível (topo acima da tela ou bottom abaixo da tela)
-        // Adiciona um offset de 100px para ativar um pouco antes de entrar completamente
         if (elementTop < windowHeight - 100 && elementBottom > 0) {
           element.classList.add('visible');
         }
       });
     }
     
-    // Executa a verificação quando a página carrega
     window.addEventListener('load', checkVisibility);
-    
-    // Executa a verificação quando o usuário rola a página
     window.addEventListener('scroll', checkVisibility);
-    
-    // Executa a verificação quando a janela é redimensionada
     window.addEventListener('resize', checkVisibility);
     
-    // Executa uma verificação inicial para elementos já visíveis
     setTimeout(checkVisibility, 100);
- 
   </script>
 
 </body>
