@@ -1006,7 +1006,240 @@
             font-size: 1.5rem;
         }
     }
+    /* ============================================ */
+/* SEÇÃO DE PLANOS - CARDS ESTILO HOSPEDAGEM    */
+/* ============================================ */
+
+#planos {
+    background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
+    padding: 80px 20px;
+}
+
+#planos .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #2c3e50;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+#planos .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #2c3e50, #f39c12, #2c3e50);
+    border-radius: 3px;
+}
+
+.planos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Card individual */
+.plano-card {
+    background: #ffffff;
+    border-radius: 24px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Borda gradiente no topo */
+.plano-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #2c3e50, #f39c12, #2c3e50);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+    transform-origin: left;
+}
+
+.plano-card:hover::before {
+    transform: scaleX(1);
+}
+
+.plano-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 30px 45px -15px rgba(44, 62, 80, 0.25);
+}
+
+/* Cabeçalho do card */
+.plano-header {
+    padding: 35px 30px 25px;
+    text-align: center;
+    border-bottom: 1px solid #eef2f6;
+}
+
+.plano-icon {
+    font-size: 64px;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #2c3e50, #f39c12);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+.plano-card h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.plano-preco {
+    margin-bottom: 15px;
+}
+
+.plano-preco .moeda {
+    font-size: 1.2rem;
+    vertical-align: super;
+    color: #7f8c8d;
+}
+
+.plano-preco .valor {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #f39c12;
+    letter-spacing: -2px;
+}
+
+.plano-preco .periodo {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+}
+
+.plano-sub {
+    font-size: 0.9rem;
+    color: #95a5a6;
+    margin-top: 10px;
+}
+
+/* Lista de benefícios */
+.plano-beneficios {
+    list-style: none;
+    padding: 30px;
+    flex-grow: 1;
+}
+
+.plano-beneficios li {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.95rem;
+    color: #34495e;
+    border-bottom: 1px dashed #ecf0f1;
+}
+
+.plano-beneficios li:last-child {
+    border-bottom: none;
+}
+
+.plano-beneficios i {
+    color: #27ae60;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+/* Botão CTA */
+.plano-cta {
+    padding: 0 30px 30px;
+}
+
+.btn-plano {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #25d366, #128c7e);
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.btn-plano:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+.btn-plano i {
+    font-size: 1.2rem;
+}
+
+.plano-obs {
+    font-size: 0.7rem;
+    color: #95a5a6;
+    text-align: center;
+    padding: 0 30px 25px;
+    margin: 0;
+}
+
+/* Responsividade da seção de planos */
+@media (max-width: 768px) {
+    .planos-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 10px;
+    }
+    
+    .plano-card h3 {
+        font-size: 1.5rem;
+    }
+    
+    .plano-preco .valor {
+        font-size: 2.5rem;
+    }
+    
+    #planos .section-title {
+        font-size: 2rem;
+        white-space: normal;
+    }
+}
+
+@media (max-width: 480px) {
+    .plano-beneficios li {
+        font-size: 0.85rem;
+    }
+    
+    .plano-header {
+        padding: 25px 20px;
+    }
+    
+    .plano-beneficios {
+        padding: 20px;
+    }
+    
+    .plano-cta {
+        padding: 0 20px 25px;
+    }
+}
   </style>
+  
 </head>
 <body>
 
@@ -1082,6 +1315,81 @@
         </div>
       </div>
     </section>
+    <section id="planos" class="fade-in-section">
+  <div class="container">
+    <h2 class="section-title">Nossos Serviços</h2>
+    <div class="planos-grid">
+      
+      <!-- CARD 1: SITES -->
+      <div class="plano-card">
+        <div class="plano-header">
+          <div class="plano-icon"><i class="bi bi-window-stack"></i></div>
+          <h3>Sites Premium</h3>
+          <div class="plano-preco">
+            
+          </div>
+          <p class="plano-sub">Ideal para sua presença digital</p>
+        </div>
+        
+        <ul class="plano-beneficios">
+          <li><i class="bi bi-check-circle-fill"></i> Site responsivo (celular, tablet, PC)</li>
+          <li><i class="bi bi-check-circle-fill"></i> Domínio personalizado (.com.br)</li>
+          <li><i class="bi bi-check-circle-fill"></i> Hospedagem inclusa</li>
+          <li><i class="bi bi-check-circle-fill"></i> E-mail profissional (@seudominio)</li>
+          <li><i class="bi bi-check-circle-fill"></i> SEO para Google</li>
+          <li><i class="bi bi-check-circle-fill"></i> Suporte técnico mensal</li>
+          <li><i class="bi bi-check-circle-fill"></i> Até 5 páginas</li>
+          <li><i class="bi bi-check-circle-fill"></i> Botão Whatsapp</li>
+          <li><i class="bi bi-check-circle-fill"></i> Conexão com redes sociais</li>
+          <li><i class="bi bi-check-circle-fill"></i> Backups de segurança</li>
+          <li><i class="bi bi-check-circle-fill"></i> Segurança com SSL</li>
+        </ul>
+        
+        <div class="plano-cta">
+          <a href="https://wa.me/5516992976187?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20plano%20SITE%20PROFISSIONAL" 
+             class="btn-plano" 
+             target="_blank"
+             rel="noopener noreferrer">
+            <i class="bi bi-whatsapp"></i> 
+          </a>
+        </div>
+        
+      </div>
+      
+      <!-- CARD 2: SISTEMAS -->
+      <div class="plano-card">
+        <div class="plano-header">
+          <div class="plano-icon"><i class="bi bi-code-square"></i></div>
+          <h3>Sistema Personalizado</h3>
+         
+          <p class="plano-sub">Sob medida para o seu negócio</p>
+        </div>
+        
+        <ul class="plano-beneficios">
+          <li><i class="bi bi-check-circle-fill"></i> Desenvolvimento completo </li>
+          <li><i class="bi bi-check-circle-fill"></i> Cadastro de Clientes</li>
+          <li><i class="bi bi-check-circle-fill"></i> Controle de estoque</li>
+          <li><i class="bi bi-check-circle-fill"></i> Agendamento de horários</li>
+          <li><i class="bi bi-check-circle-fill"></i> Emissão de pedidos</li>
+          <li><i class="bi bi-check-circle-fill"></i> Controle de usuários e permissões</li>
+          <li><i class="bi bi-check-circle-fill"></i> Hospedagem dedicada</li>
+          <li><i class="bi bi-check-circle-fill"></i> Suporte prioritário 24/7</li>
+        </ul>
+        
+        <div class="plano-cta">
+          <a href="https://wa.me/5516992976187?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20plano%20SISTEMA%20PERSONALIZADO" 
+             class="btn-plano" 
+             target="_blank"
+             rel="noopener noreferrer">
+            <i class="bi bi-whatsapp"></i> Solicitar orçamento
+          </a>
+        </div>
+        <p class="plano-obs">*Projeto sob consulta. Entre em contato para detalhes.</p>
+      </div>
+      
+    </div>
+  </div>
+</section>
 
     <!-- Vantagens -->
     <section class="benefits fade-in-section" id="services">
@@ -1122,12 +1430,7 @@
       </div>
     </section>
 
-    <section id="planos" class="fade-in-section">
-      <div class="container">
-        <h2>Planos</h2>
-        <p>Conteúdo da seção Planos</p>
-      </div>
-    </section>
+   
 
     <section id="servicos" class="fade-in-section">
       <div class="container">
