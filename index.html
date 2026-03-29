@@ -283,24 +283,14 @@
 
     /* ============================================ */
     /* SEÇÕES - CADA UMA COM BACKGROUND ÚNICO      */
-    /* E SOMBRA MÉDIA ENTRE ELAS                   */
+    /* SOMENTE SOMBRA MÉDIA ENTRE ELAS             */
+    /* SEM BORDA NO TOPO                           */
     /* ============================================ */
     section {
       padding: 80px 20px;
       min-height: auto;
       position: relative;
       box-shadow: var(--sombra-media);
-    }
-
-    /* Efeito decorativo no topo de cada seção (borda gradiente) */
-    section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--azul-bright), var(--azul-neon), var(--azul-cielo));
     }
 
     /* Seção 1: Bem Vindo - Azul Muito Claro - ALINHADO AO CENTRO */
@@ -794,16 +784,6 @@
       margin-top: auto;
     }
 
-    .footer::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--azul-bright), var(--azul-neon), var(--azul-cielo));
-    }
-
     .social-icons {
       display: flex;
       justify-content: center;
@@ -969,10 +949,7 @@
             <p>Converta visitantes em clientes com estratégias eficientes</p>
           </div>
         </div>
-        <div class="presence-text">
-          <p><strong>» Chegou a hora da sua empresa crescer.</strong></p>
-        </div>
-      </div>
+     
     </section>
 
     <!-- SEÇÃO 3: PLANOS - AZUL MÉDIO -->
