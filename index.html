@@ -306,6 +306,8 @@
     #sobre {
       background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #bae6fd 100%);
       text-align: center;
+      padding-top: 40px;    /* Reduzido de 80px para 40px */
+      padding-bottom: 40px; /* Reduzido de 80px para 40px */
     }
 
     #sobre .container {
@@ -325,22 +327,13 @@
       margin: 0 auto 1.5rem auto;
     }
 
-    /* Seção 2: Presença Online - Azul Claro com ondas */
+    /* Seção 2: Presença Online - Azul Claro - SEM O EFEITO ZEBRADO */
     .online-presence {
       background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 50%, #bfdbfe 100%);
       position: relative;
     }
 
-    .online-presence::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 100px;
-      background: repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(59,130,246,0.05) 20px, rgba(59,130,246,0.05) 40px);
-      pointer-events: none;
-    }
+    /* Efeito zebrado removido - esta regra foi deletada */
 
     /* Seção 3: Planos - Azul Médio com gradiente */
     #planos {
@@ -384,11 +377,11 @@
     }
 
     /* ============================================ */
-    /* AJUSTE DA IMAGEM - RESPONSIVA               */
+    /* AJUSTE DA IMAGEM - RESPONSIVA E MAIOR       */
     /* ============================================ */
     .imagem-destaque {
       width: 100%;
-      max-width: 800px;
+      max-width: 1200px;  /* Aumentado de 800px para 1200px */
       height: auto;
       display: block;
       margin: 0 auto;
@@ -402,14 +395,14 @@
 
     @media (max-width: 768px) {
       .imagem-destaque {
-        max-width: 1040px;
+        max-width: 100%;
         padding: 0 10px;
       }
     }
 
     @media (max-width: 480px) {
       .imagem-destaque {
-        max-width: 1200px;
+        max-width: 100%;
         width: 100%;
         padding: 0 5px;
       }
@@ -801,6 +794,12 @@
       h2 {
         font-size: 1.8rem;
       }
+      
+      /* Responsividade da primeira seção em tablets */
+      #sobre {
+        padding-top: 30px;
+        padding-bottom: 30px;
+      }
     }
 
     /* Celulares */
@@ -867,6 +866,12 @@
       h2 {
         font-size: 1.5rem;
       }
+      
+      /* Responsividade da primeira seção em celulares */
+      #sobre {
+        padding-top: 25px;
+        padding-bottom: 25px;
+      }
     }
 
     /* Celulares muito pequenos */
@@ -884,6 +889,12 @@
       .presence-card h3,
       .benefit-card h3 {
         font-size: 0.95rem;
+      }
+      
+      /* Responsividade da primeira seção em celulares pequenos */
+      #sobre {
+        padding-top: 20px;
+        padding-bottom: 20px;
       }
     }
   </style>
