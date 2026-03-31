@@ -306,8 +306,9 @@
     #sobre {
       background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #bae6fd 100%);
       text-align: center;
-      padding-top: 40px;    /* Reduzido de 80px para 40px */
-      padding-bottom: 20px; /* Reduzido de 80px para 40px */
+      padding-top: 40px;
+      padding-bottom: 20px;
+      overflow-x: hidden;
     }
 
     #sobre .container {
@@ -315,6 +316,13 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      max-width: 1200px;
+      padding: 0 20px;
+    }
+
+    #sobre h1 {
+      margin-bottom: 10px;
+      
     }
 
     #sobre h2 {
@@ -324,7 +332,8 @@
     #sobre p {
       text-align: center;
       max-width: 800px;
-      margin: 0 auto 1.5rem auto;
+      margin: 0 auto 20px auto;
+      padding-bottom: 10px;
     }
 
     /* Seção 2: Presença Online - Azul Claro - SEM O EFEITO ZEBRADO */
@@ -332,8 +341,6 @@
       background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 50%, #bfdbfe 100%);
       position: relative;
     }
-
-    /* Efeito zebrado removido - esta regra foi deletada */
 
     /* Seção 3: Planos - Azul Médio com gradiente */
     #planos {
@@ -377,11 +384,11 @@
     }
 
     /* ============================================ */
-    /* AJUSTE DA IMAGEM - RESPONSIVA E MAIOR       */
+    /* AJUSTE DA IMAGEM - RESPONSIVA EM 100% PARA DESKTOP */
     /* ============================================ */
     .imagem-destaque {
       width: 100%;
-      max-width: 1200px;  /* Aumentado de 800px para 1200px */
+      max-width: 100%;
       height: auto;
       display: block;
       margin: 0 auto;
@@ -395,16 +402,28 @@
 
     @media (max-width: 768px) {
       .imagem-destaque {
-        max-width: 100%;
-        padding: 0 10px;
+        width: 120%;
+        max-width: 120%;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      
+      .imagem-destaque:hover {
+        transform: translateX(-50%) scale(1.02);
       }
     }
 
     @media (max-width: 480px) {
       .imagem-destaque {
-        max-width: 100%;
         width: 100%;
-        padding: 0 5px;
+        max-width: 100%;
+        left: 0;
+        transform: none;
+      }
+      
+      .imagem-destaque:hover {
+        transform: scale(1.02);
       }
     }
 
@@ -929,7 +948,7 @@
     <!-- SEÇÃO 1: BEM VINDO -->
     <section id="sobre" class="fade-in-section">
       <div class="container">
-        <h1>Bem Vindo</h1><br>
+        <h1>Bem Vindo</h1>
         <p>Aqui na <strong>GR2</strong> você encontra <strong>apoio</strong> para construir sua presença empresarial online, construir soluções para resolver suas <strong>dores</strong>,
           fazer oque outras empresas não fazem por você e alcançar muito <strong>mais clientes</strong>.</p>
         <img src="imagens/imagem_001.png" alt="Equipe GR2 desenvolvendo soluções digitais" class="imagem-destaque">
