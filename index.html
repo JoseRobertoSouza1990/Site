@@ -205,11 +205,9 @@
     }
 
     #sobre h1 {
-      animation: slideInRight 1.5s ease-out forwards;
+      animation: slideInRight 1s ease-out forwards;
       opacity: 0;
     }
-
-  
 
     /* ============================================ */
     /* RESPONSIVIDADE MENU                          */
@@ -323,9 +321,9 @@
       box-shadow: var(--sombra-media);
     }
 
-    /* Seção 1: Bem Vindo - Azul Muito Claro - ALINHADO AO CENTRO */
+    /* Seção 1: Bem Vindo - Azul */
     #sobre {
-      background: linear-gradient(135deg,  #4062d4 100%);
+      background: #4062d4; /* CORRIGIDO: gradiente desnecessário removido */
       text-align: center;
       padding-top: 40px;
       padding-bottom: 20px;
@@ -358,7 +356,7 @@
       color: white;
     }
 
-    /* Seção 2: Presença Online - Azul Claro - SEM O EFEITO ZEBRADO */
+    /* Seção 2: Presença Online - Azul Claro */
     .online-presence {
       background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 50%, #bfdbfe 100%);
       position: relative;
@@ -386,11 +384,11 @@
       position: relative;
     }
 
-    .benefits h1 {
+    .benefits h2 {
       color: #ffffff;
     }
 
-    .benefits h1::after {
+    .benefits h2::after {
       background: linear-gradient(90deg, #60a5fa, #ffffff, #60a5fa);
     }
 
@@ -673,29 +671,7 @@
       border-radius: 3px;
     }
 
-    .presence-text {
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 30px 20px;
-      background: rgba(255, 255, 255, 0.8);
-      border-radius: 20px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    }
-
-    .presence-text p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: var(--azul-escuro);
-      margin-bottom: 15px;
-    }
-
-    .presence-text strong {
-      color: var(--azul-bright);
-      font-weight: 600;
-    }
-
-    .benefits h1 {
+    .benefits h2 {
       text-align: center;
       font-size: 2.5rem;
       margin-bottom: 40px;
@@ -706,7 +682,7 @@
       white-space: nowrap;
     }
 
-    .benefits h1::after {
+    .benefits h2::after {
       content: '';
       position: absolute;
       bottom: -10px;
@@ -750,14 +726,18 @@
       margin-bottom: 20px;
     }
 
-    .footer i {
+    .social-icons a {
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .social-icons i {
       font-size: 28px;
       color: #94a3b8;
       transition: all 0.3s ease;
-      cursor: pointer;
     }
 
-    .footer i:hover {
+    .social-icons a:hover i {
       transform: translateY(-5px);
       color: var(--azul-bright);
     }
@@ -823,7 +803,7 @@
         white-space: normal;
       }
       
-      .benefits h1 {
+      .benefits h2 {
         font-size: 2rem;
         white-space: normal;
       }
@@ -884,7 +864,7 @@
         font-size: 1.8rem;
       }
       
-      .benefits h1 {
+      .benefits h2 {
         font-size: 1.8rem;
       }
       
@@ -938,13 +918,21 @@
         padding-bottom: 20px;
       }
     }
-        /* ============================================ */
+
+    /* ============================================ */
     /* TELAS GRANDES - AUMENTAR H1                 */
     /* ============================================ */
     @media (min-width: 1200px) {
       #sobre h1 {
-        font-size: 3rem;
+        font-size: 4rem;
       }
+    }
+
+    @media (min-width: 1600px) {
+      #sobre h1 {
+        font-size: 5rem;
+      }
+    }
   </style>
   
 </head>
@@ -953,8 +941,8 @@
   <header class="header">
     <div class="container">
       <div class="nav-container">
-        <a href="#" class="logo">
-          <img src="imagens/logo_002.png" alt="GR2 Soluções Digitais" class="logo-img">
+        <a href="/" class="logo"> <!-- CORRIGIDO: href agora aponta para a página inicial -->
+          <img src="imagens/logo_002.png" alt="GR2 Soluções Digitais - Página inicial" class="logo-img">
         </a>
         
         <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
@@ -964,7 +952,7 @@
         <nav role="navigation" aria-label="Menu principal">
           <ul class="nav-menu" id="navMenu">
             <li><a href="#sobre">Início</a></li>
-            <li><a href="#services">Vantagens</a></li>
+            <li><a href="#vantagens">Vantagens</a></li> <!-- CORRIGIDO: ID consistente -->
             <li><a href="#planos">Planos</a></li>
             <li><a href="#servicos">Serviços</a></li>
           </ul>
@@ -979,7 +967,7 @@
       <div class="container">
         <h1>Bem Vindo</h1>
         <p>Aqui na <strong>GR2</strong> você encontra <strong>apoio</strong> para construir sua presença empresarial online, construir soluções para resolver suas <strong>dores</strong>,
-          fazer oque outras empresas não fazem por você e alcançar muito <strong>mais clientes</strong>.</p>
+          fazer o que outras empresas não fazem por você e alcançar muito <strong>mais clientes</strong>.</p> <!-- CORRIGIDO: "oque" -> "o que" -->
         <img src="imagens/imagem_001.png" alt="Ilustração representando presença digital e crescimento empresarial" class="imagem-destaque">
       </div>
     </section>
@@ -1084,8 +1072,8 @@
     </section>
 
     <!-- SEÇÃO 4: VANTAGENS -->
-    <section class="benefits fade-in-section" id="services">
-      <h1>O que oferecemos</h1>
+    <section class="benefits fade-in-section" id="vantagens"> <!-- CORRIGIDO: ID agora consistente com o menu -->
+      <h2>O que oferecemos</h2> <!-- CORRIGIDO: H1 alterado para H2 -->
       <div class="benefits-container">
         <div class="benefits-grid">
           <div class="benefit-card">
@@ -1133,12 +1121,20 @@
 
   <footer class="footer">
     <div class="social-icons">
-      <i class="bi bi-instagram"></i>
-      <i class="bi bi-linkedin"></i>
-      <i class="bi bi-youtube"></i>
-      <i class="bi bi-tiktok"></i>
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <i class="bi bi-instagram"></i>
+      </a>
+      <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <i class="bi bi-linkedin"></i>
+      </a>
+      <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+        <i class="bi bi-youtube"></i>
+      </a>
+      <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+        <i class="bi bi-tiktok"></i>
+      </a>
     </div>
-    <p class="direitos">Desenvolvido por <a href="http://www.gr2sites.com.br" target="_blank" rel="noopener noreferrer"><strong>GR2 Soluções digitais</strong></a> - Todos os direitos reservados</p>
+    <p class="direitos">Desenvolvido por <a href="https://www.gr2sites.com.br" target="_blank" rel="noopener noreferrer"><strong>GR2 Soluções digitais</strong></a> - Todos os direitos reservados</p>
   </footer>
 
   <a href="https://wa.me/5516992976187?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20os%20serviços." 
@@ -1202,5 +1198,5 @@
     setTimeout(checkVisibility, 100);
   </script>
 
-
+</body>
 </html>
