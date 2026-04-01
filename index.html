@@ -191,6 +191,25 @@
     }
 
     /* ============================================ */
+    /* EFEITO DE DESLIZAR DA DIREITA PARA O H1     */
+    /* ============================================ */
+    @keyframes slideInRight {
+      0% {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    #sobre h1 {
+      animation: slideInRight 1s ease-out forwards;
+      opacity: 0;
+    }
+
+    /* ============================================ */
     /* RESPONSIVIDADE MENU                          */
     /* ============================================ */
     @media (max-width: 768px) {
@@ -304,7 +323,7 @@
 
     /* Seção 1: Bem Vindo - Azul Muito Claro - ALINHADO AO CENTRO */
     #sobre {
-      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #bae6fd 100%);
+      background: linear-gradient(135deg,  #4062d4 100%);
       text-align: center;
       padding-top: 40px;
       padding-bottom: 20px;
@@ -322,7 +341,7 @@
 
     #sobre h1 {
       margin-bottom: 10px;
-      
+      color: white;
     }
 
     #sobre h2 {
@@ -334,6 +353,7 @@
       max-width: 800px;
       margin: 0 auto 20px auto;
       padding-bottom: 10px;
+      color: white;
     }
 
     /* Seção 2: Presença Online - Azul Claro - SEM O EFEITO ZEBRADO */
@@ -951,7 +971,7 @@
         <h1>Bem Vindo</h1>
         <p>Aqui na <strong>GR2</strong> você encontra <strong>apoio</strong> para construir sua presença empresarial online, construir soluções para resolver suas <strong>dores</strong>,
           fazer oque outras empresas não fazem por você e alcançar muito <strong>mais clientes</strong>.</p>
-        <img src="imagens/imagem_001.png" alt="" class="imagem-destaque">
+        <img src="imagens/imagem_001.png" alt="Ilustração representando presença digital e crescimento empresarial" class="imagem-destaque">
       </div>
     </section>
     
@@ -1111,7 +1131,7 @@
       <i class="bi bi-youtube"></i>
       <i class="bi bi-tiktok"></i>
     </div>
-    <p class="direitos">Desenvolvido por <a href="http://www.gr2sites.com.br" target="_blank"><strong>GR2 Soluções digitais</strong></a> - Todos os direitos reservados</p>
+    <p class="direitos">Desenvolvido por <a href="http://www.gr2sites.com.br" target="_blank" rel="noopener noreferrer"><strong>GR2 Soluções digitais</strong></a> - Todos os direitos reservados</p>
   </footer>
 
   <a href="https://wa.me/5516992976187?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20os%20serviços." 
